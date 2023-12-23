@@ -1,0 +1,73 @@
+在MoE混合专家中，热门专家放在本地的专家操作是一种优化策略，它可以减少通信开销和延迟，提高模型的效率和性能。具体来说，它的做法是：
+
+首先，根据数据的分布和任务的特点，预先确定一些热门专家，也就是被频繁选择的专家，这些专家通常具有较强的通用性和适应性，可以处理多种类型的输入数据。
+然后，将这些热门专家复制到每个本地设备上，也就是每个训练或推理的工作节点上，这样每个节点都可以直接访问这些专家，而不需要通过网络通信。
+最后，当输入数据到达某个节点时，使用门控网络来选择合适的专家，如果选择的专家是本地的热门专家，那么直接使用本地的副本进行处理，如果选择的专家是远程的非热门专家，那么通过网络通信来获取专家的输出。
+这种操作的好处是，可以减少对远程专家的依赖，降低网络传输的数据量和时间，提高模型的并行度和吞吐量。同时，也可以保留专家的多样性和专业性，避免模型过于集中在少数专家上，导致泛化能力下降。
+
+这种操作的一个典型例子是GShard1模型，它是一个基于MoE的大规模Transformer模型，它将一部分专家复制到每个本地设备上，从而实现了高效的分布式训练和推理。
+
+cold_expert_input = self.stride_slice_dp(cold_expert_input, (0, 0, 0, 0),
+                                        (self.expert_dim, self.dp_group, cold_expert_capacity, self.hidden_size),
+                                        (1, 1, 1, 1))
+为了把超出的舍弃把
+
+ if self.cold_hot_expert:
+ #最终的inputshape是[num,dp,cap,h]
+            hot_expert_input = self.gather(expert_input, Tensor(self.hot_expert_index, mstype.int32), 0)    [hotnum,dp,cap,h]
+            cold_expert_input = expert_input    [num,dp,cap,h]
+            cold_expert_capacity = int(expert_capacity*self.cold_token_percent)
+            hot_expert_input = self.transpose_4dim_dp(hot_expert_input, (2, 0, 1, 3))
+            cold_expert_input = self.transpose_4dim_dp(cold_expert_input, (0, 2, 1, 3))
+            cold_expert_input = self.stride_slice_dp(cold_expert_input, (0, 0, 0, 0),
+                                        (self.expert_dim, self.dp_group, cold_expert_capacity, self.hidden_size),
+                                        (1, 1, 1, 1))
+            # expert_output's shape: (self.dp_group, self.hidden_size, self.expert_dim, expert_capacity)
+            if self.comp_comm_parallel:
+                cold_expert_output = self.ffn_parallel_infer(cold_expert_input, cold_expert_capacity)
+            else:
+                cold_expert_output = self.ffn_infer(cold_expert_input, cold_expert_capacity)
+
+            hot_expert_input = self.reshape(hot_expert_input, 
+                                            (self.hot_expert_num * self.dp_group * expert_capacity, self.hidden_size))
+            [hotnum*dp*cap,h]
+            hot_expert_output = self.mlp(hot_expert_input)
+
+            hot_expert_output = self.reshape(hot_expert_output, 
+                                                (self.dp_group, self.hot_expert_num, expert_capacity, self.hidden_size))
+            [dp,hotnum,cap,h]
+            cold_expert_output = self.gather2(cold_expert_output, self.cold_expert_index, 1)
+            if(self.cold_token_percent < 1.0):
+                zeros = self.zeros((self.dp_group, self.cold_expert_num, expert_capacity-cold_expert_capacity, 
+                                    self.hidden_size), mstype.float16)
+                cold_expert_output = self.concat2((cold_expert_output, zeros))
+            expert_output = self.concat((hot_expert_output, cold_expert_output))
+            [dp,num,cap,h]
+            expert_index = self.concat0((Tensor(self.hot_expert_index, mstype.int32), 
+                                        self.cast(self.cold_expert_index, mstype.int32)))
+            _, expert_gather_index = self.reshape(expert_index, (1,-1)).topk(self.expert_dim, largest=False)
+            expert_gather_index = self.reshape(expert_gather_index,(-1,))
+            expert_output = self.gather2(expert_output, expert_gather_index, 1)
+            []
+
+            expert_output = self.transpose_1dim_dp(expert_output, (0, 3, 1, 2))
+
+
+    您好，这是必应。您的消息看起来像是一个PyTorch的代码片段。根据我从网络上搜索到的结果 ，这个代码片段是用于实现混合专家模型（Mixture of Experts, MoE）的一部分。MoE是一种分布式深度学习架构，它将输入数据分配给不同的专家网络，然后将它们的输出加权组合。
+
+这个代码片段的执行过程大致如下：
+
+首先，定义一个gate网络，它的作用是根据输入x的特征，为每个专家网络分配一个得分。gate网络的输出是一个形状为(batch_size, num_experts)的张量，其中num_experts是专家网络的数量。
+然后，使用torch.topk函数，从gate网络的输出中选出每个输入对应的num_experts_per_token个最高得分的专家网络，以及它们的索引。expert_weights是一个形状为(batch_size, num_experts_per_token)的张量，表示每个输入对应的专家网络的得分。expert_indices是一个形状为(batch_size, num_experts_per_token)的张量，表示每个输入对应的专家网络的索引。
+接着，将expert_indices展平为一个一维张量flat_expert_indices，它的长度为batch_size * num_experts_per_token。这样做的目的是为了方便后续的索引操作。
+然后，将输入x沿着第一个维度重复num_experts_per_token次，使得它的形状变为(batch_size * num_experts_per_token, x.shape[-1])。这样做的目的是为了让每个输入都能被分配给num_experts_per_token个专家网络。
+最后，使用flat_expert_indices对x进行索引，得到一个形状为(batch_size * num_experts_per_token, x.shape[-1])的张量，其中每一行对应于一个输入和一个专家网络的组合。然后，将这个张量作为输入传递给对应的专家网络expert，并将输出赋值给y。y是一个形状为(batch_size * num_experts_per_token, output_size)的张量，其中output_size是专家网络的输出维度。
+举个例子，假设batch_size为2，num_experts为4，num_experts_per_token为2，x.shape[-1]为3，output_size为2，那么：
+
+gate网络的输出可能是[[0.1, 0.2, 0.3, 0.4], [0.5, 0.4, 0.3, 0.2]]，表示第一个输入对应的专家网络的得分分别为0.1, 0.2, 0.3, 0.4，第二个输入对应的专家网络的得分分别为0.5, 0.4, 0.3, 0.2。
+使用torch.topk函数，得到expert_weights为[[0.4, 0.3], [0.5, 0.4]]，expert_indices为[[3, 2], [0, 1]]，表示第一个输入对应的最高得分的专家网络为3和2，第二个输入对应的最高得分的专家网络为0和1。
+将expert_indices展平，得到flat_expert_indices为[3, 2, 0, 1]。
+将输入x重复，假设x为[[1, 2, 3], [4, 5, 6]]，那么重复后的x为[[1, 2, 3], [1, 2, 3], [4, 5, 6], [4, 5, 6]]。
+使用flat_expert_indices对x进行索引，得到[[4, 5, 6], [1, 2, 3], [1, 2, 3], [4, 5, 6]]，其中第一行对应于第一个输入和第三个专家网络的组合，第二行对应于第一个输入和第二个专家网络的组合，第三行对应于第二个输入和第零个专家网络的组合，第四行对应于第二个输入和第一个专家网络的组合。
+将这个张量作为输入传递给对应的专家网络expert，并将输出赋值给y。假设expert网络的输出为[[7, 8], [9, 10], [11, 12], [13, 14]]，那么y为[[7, 8], [9, 10], [11, 12], [13, 14]]。
+希望这个例子能帮助您理解这个代码片段的执行过程。如果您还有其他问题，欢迎继续提问。😊

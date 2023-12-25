@@ -71,3 +71,17 @@ gate网络的输出可能是[[0.1, 0.2, 0.3, 0.4], [0.5, 0.4, 0.3, 0.2]]，表�
 使用flat_expert_indices对x进行索引，得到[[4, 5, 6], [1, 2, 3], [1, 2, 3], [4, 5, 6]]，其中第一行对应于第一个输入和第三个专家网络的组合，第二行对应于第一个输入和第二个专家网络的组合，第三行对应于第二个输入和第零个专家网络的组合，第四行对应于第二个输入和第一个专家网络的组合。
 将这个张量作为输入传递给对应的专家网络expert，并将输出赋值给y。假设expert网络的输出为[[7, 8], [9, 10], [11, 12], [13, 14]]，那么y为[[7, 8], [9, 10], [11, 12], [13, 14]]。
 希望这个例子能帮助您理解这个代码片段的执行过程。如果您还有其他问题，欢迎继续提问。😊
+
+
+问题：
+本地热门专家是指同个GPU下还是同个机器下
+ cold_expert_input = self.stride_slice_dp(cold_expert_input, (0, 0, 0, 0),
+                                        (self.expert_dim, self.dp_group, cold_expert_capacity, self.hidden_size),
+                                        (1, 1, 1, 1))
+函数的作用，我的理解是，把超过这个大小的部分舍弃
+ cold_expert_output = self.ffn_infer(cold_expert_input, cold_expert_capacity)
+ 不是相当于已经得到全部的输出 了吗为什么还需要后面再用本地的热门专家
+ 然后就是怎么根据expert_indices的得到expert_input，[num,...]这样后面才能根据专家index得到相应的输入输出
+ mixtralkit是用 y[expert_indices == i] = expert(x[expert_indices == i])方式传入对应输入的，这样我得不到热门专家的输入，或者热门专家的输出不知道怎么和冷门的合上
+ expert_weights, expert_indices = torch.topk(
+            scores, self.num_experts_per_tok, dim=-1)

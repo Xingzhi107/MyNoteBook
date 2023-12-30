@@ -139,3 +139,14 @@ tensor([[ 7, 10,  6,  7]])
 tensor([30], device='cpu')
 
 agecs是一个tensor列表长度为worldsize
+
+docker run -dt --name yjy --restart=always --gpus all \
+--network=host \
+--shm-size 8G \
+-v /mnt/VMSTORE/yjy/:/yjy \
+-w /yjy \
+nvcr.io/nvidia/pytorch:23.04-py3 \
+/bin/bash
+————————————————
+版权声明：本文为CSDN博主「Lay_XZ」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/Lay_XZ/article/details/134329365

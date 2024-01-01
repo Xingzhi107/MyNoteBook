@@ -1,7 +1,8 @@
 1、创建容器
 docker run -dt --name pytorch_yjy --restart=always --gpus all \
 --network=host \
---shm-size 56G \
+--shm-size 8G \
+-m 32G \
 -v /mnt/VMSTORE/yjy/:/yjy \
 -w /yjy \
 nvcr.io/nvidia/pytorch:21.10-py3 \
@@ -20,7 +21,7 @@ pip install sentencepiece
 
 cd MixtralKit-fast/MixtralKit-main
 pip install -e .
-ln -s /yjy/Mixtralkit/MixtralKit-fast/mixtral-8x7b-32kseqlen ckpts
+ln -s /mnt/VMSTORE/yjy/Mixtralkit/MixtralKit-fast/mixtral-8x7b-32kseqlen ckpts
 
 不开策略：
 torchrun --standalone --nproc_per_node=4  tools/example.py -m ./ckpts -t ckpts/tokenizer.model
@@ -29,3 +30,5 @@ torchrun --standalone --nproc_per_node=4  tools/example.py -m ./ckpts -t ckpts/t
 开策略：
 FMOE_FASTER_SCHEDULE_ENABLE=1 FMOE_FASTER_SHADOW_ENABLE=1 torchrun --standalone --nproc_per_node=4  tools/example.py -m ./ckpts -t ckpts/tokenizer.model
 报错：
+
+CUDA_HOME="/usr/local/cuda:/usr/local/cuda-9.0"

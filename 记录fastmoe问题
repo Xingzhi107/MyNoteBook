@@ -1,0 +1,153 @@
+当我使用自定义的专家，继承FMoE类，开启Smart schedule时报错
+[ubuntu:8399 :0:8399] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x7f9a6d99aa00)
+[ubuntu:8400 :0:8400] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x7faacd99aa00)
+[ubuntu:8401 :0:8401] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x7f1f9b99aa00)
+[ubuntu:8398 :0:8398] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x7f5defd9ac00)
+使用pdb调试报错位置在
+ local_output_buf, gib = fmoe_native.smart_sch_forward(
+                local_input_buf,
+                local_expert_count, global_expert_count, 
+                stored_models, fwd_batch_size, ctx.expert_size,
+                world_size, _expert_forward, get_param_fn, stash_fn, pop_fn)
+
+std::vector<torch::Tensor> _smart_sch_forward(
+...
+//发生错误位置，无法获取stored_models的值
+std::vector<torch::Tensor> params;
+    auto stored_models_ = stored_models.data_ptr<bool>();
+    for (long i = 0; i < num_expert * n_workers; ++i) {
+        if (stored_models_[i]) {
+            torch::Tensor t = input_buf.new_empty({expert_size});
+            if (i / num_expert == rank) {
+                get_param_fn(t, i % num_expert);
+            }
+            params.push_back(t);
+        }
+    }
+因为在schedule中stored_models得到一个全是false的张量[false,flase...],size[num*worldsize]
+if stored_models is None:
+        stored_models = policy_fn(local_expert_count, global_expert_count,
+                n_expert, world_size)
+不理解如果不开shadow，设置的也是返回一个全false的张量，为什么会报错
+def no_shadow_policy(_lec, _gec, num_expert, world_size):
+    res = torch.zeros(world_size * num_expert, dtype=bool)
+    return res
+用上shadow策略也返回全false的问题
+def global_policy(local_expert_count, _gec, num_expert, world_size):
+    moe_group = get_moe_group()
+    local_expert_count = local_expert_count.cuda()
+    agecs = [torch.empty_like(local_expert_count) for _ in range(world_size)]
+    # 错误原因local_expert_count全部都一样，照道理应该不一样
+    dist.all_gather(agecs, local_expert_count, group=moe_group)
+    all_global_expert_count = torch.stack(agecs)
+
+    # TODO: data type other than float
+    data_size = 4
+
+    fwd_expert_counts = all_global_expert_count.sum(1).cpu()
+    B_ws, indices = fwd_expert_counts.flatten().sort(0, descending=True)
+    alphaH2 = alpha * (d_model ** 2)
+    B_w = B_ws[0]
+
+但是在functions.py中，有关local_expert_count的计算，我的理解是每张卡上的local_expert_count应该是一样的，
+def count_by_gate(gate, num_expert, world_size, require_pos=True):
+    with torch.no_grad():
+        local_expert_count = torch.zeros(
+            num_expert * world_size, device=gate.device, dtype=torch.int32
+        )
+        print("gate:", gate)
+        fmoe_cuda.expert_count(gate, local_expert_count)
+        local_expert_count = local_expert_count.long()
+
+        if world_size > 1:
+            global_expert_count = fmoe_cuda.expert_exchange(
+                local_expert_count, num_expert, world_size
+            )
+        else:
+            global_expert_count = local_expert_count
+        if not require_pos:
+            pos = None
+        else:
+            lec_cum = torch.cumsum(local_expert_count, dim=0).int()
+            pos_size = lec_cum[-1].item()
+            pos = torch.empty((pos_size,), device=gate.device, dtype=torch.long)
+            fmoe_cuda.assign_pos(lec_cum, gate, pos)
+
+    print("local_expert_count:",local_expert_count)
+    print("global_expert_count:",global_expert_count)
+    return pos, local_expert_count, global_expert_count
+
+
+
+打印结果：
+local_expert_count: local_expert_count: local_expert_count: local_expert_count: tensor([4, 4, 3, 4, 4, 1, 0, 4])tensor([4, 4, 3, 4, 4, 1, 0, 4])
+
+global_expert_count: global_expert_count: tensor([4, 4, 3, 4, 4, 1, 0, 4])
+global_expert_count: tensor([4, 4, 3, 4, 4, 1, 0, 4])
+global_expert_count: tensor([4, 1, 4, 1, 4, 1, 4, 1])tensor([0, 4, 0, 4, 0, 4, 0, 4])
+
+tensor([4, 4, 4, 4, 4, 4, 4, 4])
+tensor([3, 4, 3, 4, 3, 4, 3, 4])
+local_expert_count:  local_expert_count:  local_expert_count: local_expert_count:   tensor([4, 4, 3, 4, 4, 1, 0, 4], device='cpu')
+stored_models: tensor([4, 4, 3, 4, 4, 1, 0, 4], device='cpu')
+tensor([4, 4, 3, 4, 4, 1, 0, 4], device='cpu')stored_models: 
+tensor([4, 4, 3, 4, 4, 1, 0, 4], device='cpu')stored_models: 
+stored_models: tensor([False, False, False, False, False, False, False, False])
+tensor([False, False, False, False, False, False, False, False])
+tensor([False, False, False, False, False, False, False, False])
+tensor([False, False, False, False, False, False, False, False])
+
+
+
+
+我不清楚需要约束的input and output是指什么
+The input and output features have to be of the same length for the experts.
+我的定义是这样的：
+class Expert(nn.Module):
+    def __init__(
+        self,
+        d_model, d_hidden,
+        rank = 0,
+    ):
+        super().__init__()
+
+        self.w1 = nn.Linear(
+            d_model, d_hidden, bias=False
+        )
+        self.w2 = nn.Linear(
+            d_hidden, d_model, bias=False
+        )
+        self.w3 = nn.Linear(
+            d_model, d_hidden, bias=False
+        )
+
+    def forward(self, x, fec=None):
+
+        print(x.shape)
+        out = self.w2(F.silu(self.w1(x)) * self.w3(x))
+        # print(out.shape)
+        return out
+
+class FastMoe(FMoE):
+    def __init__(self,
+                 num_expert=4,
+                 d_model = 1024,
+                 d_hidden=4096,
+                 activation=torch.nn.SiLU(),
+                 world_size =4,
+                 top_k = 2,
+        ):
+        def one_expert(d_model):
+            return Expert( d_model, d_hidden)
+        expert = one_expert
+        super().__init__(num_expert, d_model, world_size,
+                         top_k=top_k,expert=expert)
+        self.mark_parallel_comm()
+也使用了DDP：
+ self.model = self.model.to(rank)
+        self.model = DDP(self.model)
+命令如下：
+FMOE_FASTER_SCHEDULE_ENABLE=1 FMOE_FASTER_SHADOW_ENABLE=1 FMOE_FASTER_GROUP_SIZE=1 torchrun --standalone --nproc_per_node=4  tools/example.py -m ./ckpts -t ckpts/tokenizer.model
+num_expert为4
+我想要实现一个GPU上一个专家的并行
+如果有人能指点一下我就太感谢了

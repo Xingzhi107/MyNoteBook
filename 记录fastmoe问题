@@ -149,5 +149,46 @@ class FastMoe(FMoE):
 命令如下：
 FMOE_FASTER_SCHEDULE_ENABLE=1 FMOE_FASTER_SHADOW_ENABLE=1 FMOE_FASTER_GROUP_SIZE=1 torchrun --standalone --nproc_per_node=4  tools/example.py -m ./ckpts -t ckpts/tokenizer.model
 num_expert为4
-我想要实现一个GPU上一个专家的并行
-如果有人能指点一下我就太感谢了
+解决了，是因为stored_model加载到gpu上了，而要求是在cpu上的
+
+问题：local——expert——count一样
+原因：因为我每张GPU上的input是一样的
+解决办法：用scatter把输入分配到不同的卡上
+
+
+在外面加scatter难用，prompts列表大小必须和worldsize一样大，还是换个地方加scatter把,但是换位置还是个列表啊，是因为报错，需要改
+prompt_tokens = [self.tokenizer.encode(x, bos=True, eos=False) for x in prompts]
+
+
+问题：进入策略了但还是没有一个是返回true的?
+
+问题：把它改成多机多卡的代码
+
+torchrun --nproc_per_node 8 \
+    --nnodes 1 \
+    --node_rank 0 \
+    --master_addr localhost \
+    --master_port 6000 \
+    tools/example.py -m ./ckpts -t ckpts/tokenizer.model
+
+DDP初始化
+if args.rank == 0:
+            print("> initializing torch distributed ...", flush=True)
+        # Manually set the device ids.
+        if device_count > 0:
+            device = args.rank % device_count
+            if args.local_rank is not None:
+                assert (
+                    args.local_rank == device
+                ), "expected local-rank to be the same as rank % device-count."
+            else:
+                args.local_rank = device
+            torch.cuda.set_device(device)
+        # Call the init process
+        torch.distributed.init_process_group(
+            backend=args.distributed_backend,
+            world_size=args.world_size,
+            rank=args.rank,
+            timeout=timedelta(minutes=args.distributed_timeout_minutes),
+        )
+

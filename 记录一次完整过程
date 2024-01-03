@@ -32,3 +32,4 @@ FMOE_FASTER_SCHEDULE_ENABLE=1 FMOE_FASTER_SHADOW_ENABLE=1 torchrun --standalone 
 报错：
 
 CUDA_HOME="/usr/local/cuda:/usr/local/cuda-9.0"
+export CUDA_HOME=/usr/local/cuda-11.7

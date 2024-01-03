@@ -192,3 +192,4 @@ if args.rank == 0:
             timeout=timedelta(minutes=args.distributed_timeout_minutes),
         )
 
+scatter以后要gather吗？

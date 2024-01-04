@@ -32,8 +32,6 @@ torchrun --standalone --nproc_per_node=4  tools/example.py -m ./ckpts -t ckpts/t
 FMOE_FASTER_SCHEDULE_ENABLE=1 FMOE_FASTER_SHADOW_ENABLE=1 torchrun --standalone --nproc_per_node=4  tools/example.py -m ./ckpts -t ckpts/tokenizer.model
 报错：
 
-CUDA_HOME="/usr/local/cuda:/usr/local/cuda-9.0"
-export CUDA_HOME=/usr/local/cuda-11.7
 
 多机多卡：
 torchrun --nproc_per_node 4 \

@@ -161,35 +161,44 @@ prompt_tokens = [self.tokenizer.encode(x, bos=True, eos=False) for x in prompts]
 
 
 问题：进入策略了但还是没有一个是返回true的?
+原因1：batchsize太小了【scatter后bsz为1】
+改大batchsize的时候不能只改大小，起码把内容重复一遍，数据要存在
+原因2：时间永远比base大
+bsz为64时，0.0488  0.0058
+
 
 问题：把它改成多机多卡的代码
-
-torchrun --nproc_per_node 8 \
-    --nnodes 1 \
+torchrun --nproc_per_node 4 \
+    --nnodes 12 \
     --node_rank 0 \
     --master_addr localhost \
-    --master_port 6000 \
+    --master_port 29520 \
     tools/example.py -m ./ckpts -t ckpts/tokenizer.model
 
-DDP初始化
-if args.rank == 0:
-            print("> initializing torch distributed ...", flush=True)
-        # Manually set the device ids.
-        if device_count > 0:
-            device = args.rank % device_count
-            if args.local_rank is not None:
-                assert (
-                    args.local_rank == device
-                ), "expected local-rank to be the same as rank % device-count."
-            else:
-                args.local_rank = device
-            torch.cuda.set_device(device)
-        # Call the init process
-        torch.distributed.init_process_group(
-            backend=args.distributed_backend,
-            world_size=args.world_size,
-            rank=args.rank,
-            timeout=timedelta(minutes=args.distributed_timeout_minutes),
-        )
+
 
 scatter以后要gather吗？
+
+
+
+
+
+编译时版本问题
+D11_BUILD_ABI="_cxxabi1013"' -DTORCH_EXTENSION_NAME=fmoe_cuda -DTORCH_EXTENSION_NAME=fmoe_cuda -D_GLIBCXX_USE_CXX11_ABI=1 -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+FAILED: /yjy/Mixtralkit/fast/fastmoe/build/temp.linux-x86_64-3.8/cuda/global_exchange.o 
+c++ -MMD -MF /yjy/Mixtralkit/fast/fastmoe/build/temp.linux-x86_64-3.8/cuda/global_exchange.o.d -pthread -B /opt/conda/compiler_compat -Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /opt/conda/include -fPIC -O2 -isystem /opt/conda/include -fPIC -I/opt/conda/lib/python3.8/site-packages/torch/include -I/opt/conda/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/opt/conda/lib/python3.8/site-packages/torch/include/TH -I/opt/conda/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/opt/conda/include/python3.8 -c -c /yjy/Mixtralkit/fast/fastmoe/cuda/global_exchange.cpp -o /yjy/Mixtralkit/fast/fastmoe/build/temp.linux-x86_64-3.8/cuda/global_exchange.o -DFMOE_USE_NCCL -DUSE_C10D_NCCL -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1013"' '-DPYBIND11_BUILD_ABI="_cxxabi1013"' -DTORCH_EXTENSION_NAME=fmoe_cuda -DTORCH_EXTENSION_NAME=fmoe_cuda -D_GLIBCXX_USE_CXX11_ABI=1 -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+In file included from /opt/conda/lib/python3.8/site-packages/torch/include/c10/core/DeviceType.h:8,
+                 from /opt/conda/lib/python3.8/site-packages/torch/include/c10/core/Device.h:3,
+                 from /opt/conda/lib/python3.8/site-packages/torch/include/c10/core/Allocator.h:6,
+                 from /opt/conda/lib/python3.8/site-packages/torch/include/ATen/ATen.h:7,
+                 from /opt/conda/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /opt/conda/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/data/dataloader_options.h:4,
+                 from /opt/conda/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/data/dataloader/base.h:3,
+                 from /opt/conda/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/data/dataloader/stateful.h:3,
+                 from /opt/conda/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/data/dataloader.h:3,
+                 from /opt/conda/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/data.h:3,
+                 from /opt/conda/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/all.h:8,
+                 from /opt/conda/lib/python3.8/site-packages/torch/include/torch/extension.h:4,
+                 from /yjy/Mixtralkit/fast/fastmoe/cuda/global_exchange.cpp:3:
+
+profile记录时开启策略只显示MOEForward，而不开策略可以看到MOEscatter和MOEgather

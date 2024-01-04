@@ -1,4 +1,6 @@
 1、创建容器
+docker pull nvcr.io/nvidia/pytorch:21.10-py3
+
 docker run -dt --name yjy --restart=always --gpus all \
 --network=host \
 --shm-size 12G \

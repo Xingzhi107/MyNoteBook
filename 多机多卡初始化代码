@@ -1,0 +1,22 @@
+world_size = int(os.environ["WORLD_SIZE"])
+    
+rank = int(os.environ["RANK"])
+
+nproc_per_node = int(os.environ["LOCAL_WORLD_SIZE"])
+nnodes = world_size//nproc_per_node
+dist.init_process_group(backend="nccl",world_size=world_size,rank=rank)
+torch.cuda.set_device(int(os.environ['LOCAL_RANK']))
+
+torchrun --nproc_per_node 4 \
+    --nnodes 2 \
+    --node_rank 0 \
+    --master_addr 172.20.21.85 \
+    --master_port 29520 \
+    tools/example.py -m ./ckpts -t ckpts/tokenizer.model
+
+torchrun --nproc_per_node 4 \
+    --nnodes 2 \
+    --node_rank 1 \
+    --master_addr 172.20.21.85 \
+    --master_port 29520 \
+    tools/example.py -m ./ckpts -t ckpts/tokenizer.model

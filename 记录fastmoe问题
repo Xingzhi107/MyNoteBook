@@ -202,3 +202,6 @@ In file included from /opt/conda/lib/python3.8/site-packages/torch/include/c10/c
                  from /yjy/Mixtralkit/fast/fastmoe/cuda/global_exchange.cpp:3:
 
 profile记录时开启策略只显示MOEForward，而不开策略可以看到MOEscatter和MOEgather
+
+node_rank = int(os.environ['GROUP_RANK'])
+moe_group = dist.new_group([i for i in range(node_rank*nproc_per_node,(node_rank+1)*nproc_per_node))

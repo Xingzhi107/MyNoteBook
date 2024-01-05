@@ -10,7 +10,7 @@ nvcr.io/nvidia/pytorch:21.10-py3 \
 /bin/bash
 
 
-docker exec -it pytorch_yjy bash
+docker exec -it yjy bash
 
 2、git fastmoe
 git clone https://github.com/laekov/fastmoe.git
@@ -34,18 +34,25 @@ torchrun --standalone --nproc_per_node=4  tools/example.py -m ./ckpts -t ckpts/t
 FMOE_FASTER_SCHEDULE_ENABLE=1 FMOE_FASTER_SHADOW_ENABLE=1 torchrun --standalone --nproc_per_node=4  tools/example.py -m ./ckpts -t ckpts/tokenizer.model
 报错：
 
+单机多卡：
+torchrun --nproc_per_node 4 \
+    --nnodes 1 \
+    --node_rank 0 \
+    --master_addr localhost \
+    --master_port 29540 \
+    tools/example.py -m ./ckpts -t ckpts/tokenizer.model
 
 多机多卡：
 torchrun --nproc_per_node 4 \
     --nnodes 2 \
     --node_rank 0 \
-    --master_addr 172.20.21.85 \
-    --master_port 29520 \
+    --master_addr 172.20.20.140 \
+    --master_port 29540 \
     tools/example.py -m ./ckpts -t ckpts/tokenizer.model
 
 torchrun --nproc_per_node 4 \
     --nnodes 2 \
     --node_rank 1 \
-    --master_addr 172.20.21.85 \
-    --master_port 29520 \
+    --master_addr 172.20.20.140 \
+    --master_port 29540 \
     tools/example.py -m ./ckpts -t ckpts/tokenizer.model

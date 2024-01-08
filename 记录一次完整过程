@@ -12,6 +12,11 @@ nvcr.io/nvidia/pytorch:21.10-py3 \
 
 docker exec -it yjy bash
 
+conda create -n yjy python=3.8
+zip xxx.zip xxx
+tar -cvf MixtralKit-main.tar MixtralKit-main
+
+vim mixtral-8x7b-32kseqlen/params.json
 2、git fastmoe
 git clone https://github.com/laekov/fastmoe.git
 cd fastmoe
@@ -24,10 +29,12 @@ pip install sentencepiece
 
 cd MixtralKit-fast/MixtralKit-main
 pip install -e .
+ln -s /mnt/VMSTORE/yjy/Mixtralkit/MixtralKit-fast/mixtral-8x7b-32kseqlen ckpts
 ln -s /yjy/Mixtralkit/MixtralKit-fast/mixtral-8x7b-32kseqlen ckpts
 
+
 不开策略：
-torchrun --standalone --nproc_per_node=4  tools/example.py -m ./ckpts -t ckpts/tokenizer.model
+CUDA_VISIBLE_DEVICES=4,5,6,7 torchrun --standalone --nproc_per_node=4  tools/example.py -m ./ckpts -t ckpts/tokenizer.model
 报错：
 
 开策略：
@@ -43,16 +50,19 @@ torchrun --nproc_per_node 4 \
     tools/example.py -m ./ckpts -t ckpts/tokenizer.model
 
 多机多卡：
-torchrun --nproc_per_node 4 \
+FMOE_FASTER_SCHEDULE_ENABLE=1 FMOE_FASTER_SHADOW_ENABLE=1 torchrun --nproc_per_node 4 \
     --nnodes 2 \
     --node_rank 0 \
-    --master_addr 172.20.20.140 \
+    --master_addr 172.20.21.189 \
     --master_port 29540 \
     tools/example.py -m ./ckpts -t ckpts/tokenizer.model
 
-torchrun --nproc_per_node 4 \
+FMOE_FASTER_SCHEDULE_ENABLE=1 FMOE_FASTER_SHADOW_ENABLE=1 torchrun --nproc_per_node 4 \
     --nnodes 2 \
     --node_rank 1 \
-    --master_addr 172.20.20.140 \
+    --master_addr 172.20.21.189 \
     --master_port 29540 \
     tools/example.py -m ./ckpts -t ckpts/tokenizer.model
+
+
+CUDA_VISIBLE_DEVICES=4,5,6,7 bash scripts/run_enwik8_base_moe.sh eval --work_dir /mnt/VMSTORE/yjy/Mixtralkit/fastmoe-master/examples/transformer-xl-enwik8/20240107-123200

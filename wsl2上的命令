@@ -1,0 +1,31 @@
+~/.bashrc
+
+function update_windows_net_info() {
+            WINDOWS_IP=$(grep nameserver /etc/resolv.conf | awk '{print $2}' | head -1)
+                WINDOWS_PROXY_PORT=7890
+        }
+
+# 开启代理
+function proxy_on() {
+        export HTTP_PROXY="http://${WINDOWS_IP}:${WINDOWS_PROXY_PORT}" # http 或 socks5，取决于代理的协议
+        export HTTPS_PROXY="http://${WINDOWS_IP}:${WINDOWS_PROXY_PORT}" # http 或 socks5，取决于代理的协议
+        export ALL_PROXY="http://${WINDOWS_IP}:${WINDOWS_PROXY_PORT}" # http 或 socks5，取决于代理的协议
+        echo -e "Acquire::http::Proxy \"http://${WINDOWS_IP}:${WINDOWS_PROXY_PORT}\";" | sudo tee -a /etc/apt/apt.conf.d/proxy.conf > /dev/null
+        echo -e "Acquire::https::Proxy \"http://${WINDOWS_IP}:${WINDOWS_PROXY_PORT}\";" | sudo tee -a /etc/apt/apt.conf.d/proxy.conf > /dev/null
+        proxy_status
+}
+# 关闭代理
+function proxy_off() {
+        unset HTTP_PROXY
+        unset HTTPS_PROXY
+        unset ALL_PROXY
+        sudo sed -i -e '/Acquire::http::Proxy/d' /etc/apt/apt.conf.d/proxy.conf
+        sudo sed -i -e '/Acquire::https::Proxy/d' /etc/apt/apt.conf.d/proxy.conf
+        proxy_status
+}
+# 代理状态
+function proxy_status() {
+        echo "HTTP_PROXY:" "${HTTP_PROXY}"
+        echo "HTTPS_PROXY:" "${HTTPS_PROXY}"
+        echo "ALL_PROXY:" "${ALL_PROXY}"
+}

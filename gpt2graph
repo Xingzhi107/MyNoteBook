@@ -16,15 +16,15 @@ graph():
     %wpe : [#users=1] = call_module[target=wpe](args = (%view_1,), kwargs = {})
     %add_1 : [#users=1] = call_function[target=operator.add](args = (%wte, %wpe), kwargs = {})
     %drop : [#users=3] = call_module[target=drop](args = (%add_1,), kwargs = {})
-    %size_2 : [#users=1] = call_method[target=size](args = (%drop, -1), kwargs = {})
-    %add_2 : [#users=1] = call_function[target=operator.add](args = (%size, (%size_2,)), kwargs = {})
+    %size_2 : [#users=1] = call_method[target=size](args = (%drop, -1), kwargs = {})    #h
+    %add_2 : [#users=1] = call_function[target=operator.add](args = (%size, (%size_2,)), kwargs = {})   #[b,h]
     %h_0_ln_1 : [#users=3] = call_module[target=h.0.ln_1](args = (%drop,), kwargs = {})
-    %size_3 : [#users=1] = call_method[target=size](args = (%h_0_ln_1,), kwargs = {})
-    %getitem_4 : [#users=1] = call_function[target=operator.getitem](args = (%size_3, slice(None, -1, None)), kwargs = {})
-    %add_3 : [#users=1] = call_function[target=operator.add](args = (%getitem_4, (2304,)), kwargs = {})
+    %size_3 : [#users=1] = call_method[target=size](args = (%h_0_ln_1,), kwargs = {})   #[b,s,h]
+    %getitem_4 : [#users=1] = call_function[target=operator.getitem](args = (%size_3, slice(None, -1, None)), kwargs = {})  #[b,s]
+    %add_3 : [#users=1] = call_function[target=operator.add](args = (%getitem_4, (2304,)), kwargs = {}) #[b,s,2304]
     %h_0_attn_c_attn_bias : [#users=1] = get_attr[target=h.0.attn.c_attn.bias]
-    %size_4 : [#users=1] = call_method[target=size](args = (%h_0_ln_1, -1), kwargs = {})
-    %view_2 : [#users=1] = call_method[target=view](args = (%h_0_ln_1, -1, %size_4), kwargs = {})
+    %size_4 : [#users=1] = call_method[target=size](args = (%h_0_ln_1, -1), kwargs = {})    #h
+    %view_2 : [#users=1] = call_method[target=view](args = (%h_0_ln_1, -1, %size_4), kwargs = {})   #[bs,h]
     %h_0_attn_c_attn_weight : [#users=1] = get_attr[target=h.0.attn.c_attn.weight]
     %addmm : [#users=1] = call_function[target=torch.addmm](args = (%h_0_attn_c_attn_bias, %view_2, %h_0_attn_c_attn_weight), kwargs = {})
     %view_3 : [#users=1] = call_method[target=view](args = (%addmm, %add_3), kwargs = {})

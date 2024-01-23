@@ -1,0 +1,3 @@
+conda create -n yjy python=3.8
+
+conda create -n 新环境名 --clone 旧环境名

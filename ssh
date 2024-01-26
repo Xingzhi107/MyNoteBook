@@ -1,0 +1,27 @@
+ssh root@172.20.20.220
+
+ssh root@172.20.21.165（拉不了镜像）cha
+ssh root@172.20.21.157（拉不了镜像）×
+
+ssh root@172.20.21.21(下了运行不起来)
+ssh root@172.20.21.29（下了运行不起来）
+
+conda环境都废了
+
+这个错误提示表明您的/var/lib/dpkg/info/xserver-common.list文件被损坏了。要解决这个问题，您需要删除这个文件，然后重新安装xserver-common包。1 您可以按照以下的步骤进行操作：
+
+删除损坏的文件，运行以下的命令：
+sudo rm /var/lib/dpkg/info/xserver-common.list
+
+重新安装xserver-common包，运行以下的命令：
+sudo apt --reinstall install xserver-common
+
+export PATH=/usr/local/cuda-11.1/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PATH
+export CUDA_HOME=/usr/local/cuda-11.1
+
+sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda-11.1/lib64/
+sudo cp cuda/include/cudnn* /usr/local/cuda-11.1/include/
+
+sudo chmod a+r /usr/local/cuda-11.1/include/cudnn*
+sudo chmod a+r /usr/local/cuda-11.1/lib64/libcudnn*

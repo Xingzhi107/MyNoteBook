@@ -24,3 +24,5 @@ sudo apt-get update
 
 
 cat /proc/versionv
+
+--no-same-owner

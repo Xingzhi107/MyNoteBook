@@ -100,7 +100,7 @@ graph():
     %size_15 : [#users=1] = call_method[target=size](args = (%h_0_ln_2, -1), kwargs = {})
     %view_10 : [#users=1] = call_method[target=view](args = (%h_0_ln_2, -1, %size_15), kwargs = {}) #[s,b,h]
     %h_0_mlp_c_fc_weight : [#users=1] = get_attr[target=h.0.mlp.c_fc.weight]
-    %addmm_2 : [#users=1] = call_function[target=torch.addmm](args = (%h_0_mlp_c_fc_bias, %view_10, %h_0_mlp_c_fc_weight), kwargs = {}) #3072
+    %addmm_2 : [#users=1] = call_function[target=torch.addmm](args = (%h_0_mlp_c_fc_bias, %view_10, %h_0_mlp_c_fc_weight), kwargs = {}) #3072   scatter
     %view_11 : [#users=3] = call_method[target=view](args = (%addmm_2, %add_10), kwargs = {})
     %mul : [#users=1] = call_function[target=operator.mul](args = (0.5, %view_11), kwargs = {})
     %pow_2 : [#users=1] = call_function[target=torch.pow](args = (%view_11, 3.0), kwargs = {})

@@ -26,3 +26,15 @@ sudo apt-get update
 cat /proc/versionv
 
 --no-same-owner
+rm build/mindspore/CMakeCache.txt
+rm build/mindspore/_deps/grpc-subbuild/CMakeCache.txt
+vim build/mindspore/_deps/grpc-subbuild/Makefile
+vim build/mindspore/_deps/grpc-subbuild/grpc-populate-prefix/src/grpc-populate-stamp/extract-grpc-populate.cmake
+
+bash build.sh -e gpu -S on
+
+apt-get install automake autoconf libtool tcl patch libnuma-dev flex -y
+
+export PATH=/usr/local/cuda-11.1/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PATH
+export CUDA_HOME=/usr/local/cuda-11.1

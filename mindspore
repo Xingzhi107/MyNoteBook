@@ -899,3 +899,6 @@ vim mindspore/mindspore/ccsrc/frontend/parallel/step_auto_parallel.cc
 cd mindspore
 bash build.sh -e gpu -S on
 pip install output/mindspore-*.whl -i https://pypi.tuna.tsinghua.edu.cn/simple
+dynamic_programming
+sharding_propagation
+recursive_programming

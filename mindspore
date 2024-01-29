@@ -860,3 +860,42 @@ python mindformers/mindformers/tools/dataset_preprocess/gpt2/wikitext2_data_proc
  'trainer': {'model_name': 'GPT2LMHeadModel',
              'type': 'CausalLanguageModelingTrainer'},
  'use_parallel': False}
+
+vim /yjy/test/configs/gpt2/run_gpt2.yaml
+
+预处理数据：
+python mindformers/mindformers/tools/dataset_preprocess/gpt2/wikitext2_data_process.py \
+                              --input_file test/data/wikitext-2/wiki.train.tokens \
+                              --output_file test/data/wikitext-2/wikitext-2.train.mindrecord \
+                              --max_length 1025
+训练：
+CUDA_VISIBLE_DEVICES=4,5,6,7 mpirun -n 4 --allow-run-as-root \
+                         python mindformers/run_mindformer.py --config /yjy/test/configs/gpt2/run_gpt2.yaml \
+                         --run_mode train \
+                         --train_dataset_dir /yjy/test/data/wikitext-2/wikitext-2.train.mindrecord
+
+推理代码：
+权重转换
+python mindformers/mindformers/models/gpt2/convert_weight.py --layers 12 --torch_path gpt2_small.bin --mindspore_path ./gpt2_small.ckpt
+
+数据预处理：
+python create_pretraining_data.py \
+  --input_file=test/data/en.txt \
+  --output_file=/tmp/tf_examples.tfrecord \
+  --vocab_file=$BERT_BASE_DIR/vocab.txt \
+  --do_lower_case=True \
+  --max_seq_length=128 \
+  --max_predictions_per_seq=20 \
+  --masked_lm_prob=0.15 \
+  --random_seed=12345 \
+  --dupe_factor=5
+
+CUDA_VISIBLE_DEVICES=6,7 mpirun -n 2 --allow-run-as-root \
+                        python mindformers/run_mindformer.py --config /yjy/test/configs/bert/run_bert_base_uncased.yaml --run_mode train  \
+                         --train_dataset_dir /yjy/test/enwik8
+
+vim mindspore/mindspore/ccsrc/frontend/parallel/step_auto_parallel.cc
+
+cd mindspore
+bash build.sh -e gpu -S on
+pip install output/mindspore-*.whl -i https://pypi.tuna.tsinghua.edu.cn/simple

@@ -1008,8 +1008,9 @@ class CostGraph {
 
 
   gs中的costnode：
-      std::string name;
+    std::string name;
     std::string device;
+    // operator_costmodel.h: GetMemoryCost,GetComputationCost
     int64_t compute_cost;
     int64_t memory_cost;
     int64_t output_memory;
@@ -1019,3 +1020,6 @@ class CostGraph {
     std::vector<int64_t> output_comm_costs;
     int64_t start_time;
     int64_t end_time;
+
+
+排布模型由device_matrix，tensor_shape和tensor map组成，分别表示设备矩阵形状、张量形状、设备和张量维度间的映射关系。

@@ -1,0 +1,62 @@
+  for (auto &op : entire_costgraph->GetOperators()) {
+    // std::string strategy_key_name = op->cnodes()[0]->fullname_with_scope();//name1
+    std::string strategy_name = op->name();//name2
+    cout <<strategy_name<<endl;
+    // attrs
+    PrimitiveAttrs attrs = op->attrs();
+    // cout << "op.attrs: "<< op->attrs() << endl;
+    for (auto it = attrs.begin(); it != attrs.end(); it++) { // 遍历map中的每个元素，使用迭代器（iterator）来访问
+      auto it = attrs.find("input_names");
+      if (it != attrs.end()) {
+          // Attribute found, access the value
+          ValuePtr value = it->second;
+          // Do something with the value...
+          std::cout << "Attribute value: " << value->ToString() << std::endl;
+      } else {
+          // Attribute not found
+          std::cout << "Attribute not found." << std::endl;
+      }
+      auto output_names = attrs.find("output_names");
+      if (output_names != attrs.end()) {
+          // Attribute found, access the value
+          ValuePtr value = output_names->second;
+          // Do something with the value...
+          std::cout << "Attribute value: " << value->ToString() << std::endl;
+      } else {
+          // Attribute not found
+          std::cout << "Attribute not found." << std::endl;
+      }
+    }
+    //shape
+    cout<<"op.inputs_shape_: "<< op->inputs_shape() << endl;
+    cout<<"op.outputs_shape: "<< op->outputs_shape() << endl;
+    // memorycost是strategy_cost_的还是op的GetMemoryCost
+    for (auto it = op->GetStrategyCost().begin(); it != op->GetStrategyCost().end(); it++) {
+      if (*it != nullptr && !(*it)->cost_list.empty()) {
+        auto mem_cost = (*it)->cost_list[0]->memory_with_reuse_;
+        cout << "mem_cost: " << mem_cost << endl;
+      } else {
+          cout << "Invalid cost_list or empty cost_list." << endl;
+      }
+    }
+    auto cnode = op->cnode();
+    // std::vector<bool> parameter_info = ExtractInputParameterByNode(cnode);
+    auto inputname = ExtractInputParameterNameByNode(cnode);
+    cout<<"inputname: "<<inputname<<endl;
+    for (auto it = inputname.begin(); it != inputname.end(); it++) {
+      cout <<"inputname: "<< *it << endl;
+    }
+    auto operator_info = cnode->user_data<OperatorInfo>();
+    std::string op_info_name = operator_info->name();
+    // cout <<"operator_cost: "<< op->operator_cost() << endl;
+    // cnode代表什么
+    // cout <<"op.cnode: "<< *(op->cnode()) << endl;
+    // cout << "op.input_value: "<<op->input_value()<<endl;
+    // auto inputs = op->cnode()->inputs();
+    // for (auto it = inputs.begin(); it != inputs.end(); it++) {
+    //   cout << *it << endl;
+    // }
+    // cout <<"op.cnode.inputs: "<<op->cnode()->inputs()<<endl;
+    // cout <<"op.cnode: "<< &(op->cnode()) << endl;
+    // op->inputs_tensor_info()只有shape
+  }

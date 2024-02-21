@@ -1023,3 +1023,5 @@ class CostGraph {
 
 
 排布模型由device_matrix，tensor_shape和tensor map组成，分别表示设备矩阵形状、张量形状、设备和张量维度间的映射关系。
+
+调用ParallelStrategySearch或者SearchParallelStrategy的接口是哪个

@@ -890,9 +890,10 @@ python create_pretraining_data.py \
   --random_seed=12345 \
   --dupe_factor=5
 
-CUDA_VISIBLE_DEVICES=6,7 mpirun -n 2 --allow-run-as-root \
-                        python mindformers/run_mindformer.py --config /yjy/test/configs/bert/run_bert_base_uncased.yaml --run_mode train  \
-                         --train_dataset_dir /yjy/test/enwik8
+CUDA_VISIBLE_DEVICES=0,1 mpirun -n 2 --allow-run-as-root \
+                         python mindformers/run_mindformer.py --config /yjy/test/configs/gpt2/run_gpt2.yaml \
+                         --run_mode train \
+                         --train_dataset_dir /yjy/test/data/wikitext-2/wikitext-2.train.mindrecord
 
 vim mindspore/mindspore/ccsrc/frontend/parallel/step_auto_parallel.cc
 
@@ -902,3 +903,119 @@ pip install output/mindspore-*.whl -i https://pypi.tuna.tsinghua.edu.cn/simple
 dynamic_programming
 sharding_propagation
 recursive_programming
+
+
+operator_info中各属性的含义：
+  std::string name_;
+  Shapes inputs_shape_;
+  Shapes outputs_shape_;
+  mindspore::HashMap<std::string, ValuePtr> attrs_;
+  std::vector<ValuePtr> input_value_;
+  TypePtr outputs_dtype_;
+
+  int32_t stage_id_ = 0;
+  StrategyPtr strategy_;
+  StrategyPtr out_strategy_;
+  std::vector<TensorInfo> inputs_tensor_info_;
+  std::vector<TensorInfo> outputs_tensor_info_;
+  Shape dev_matrix_shape_;  // if repeated calculation, it contains the repeated_calc_num_
+  Shape out_dev_matrix_shape_;
+  int64_t repeated_calc_num_ = 1;
+  int64_t as_loss_divisor_ = 1;
+  TensorMaps inputs_tensor_map_;
+  TensorMaps outputs_tensor_map_;
+  ForwardOp forward_op_;
+  Ops sub_ops_;
+  ForwardOp replace_op_;
+  OutPutInfoVector replace_op_info_;
+  ReplaceGraphPtr replace_graph_;
+  MirrorOps mirror_ops_;
+  VirtualDivOp virtual_div_op_;
+  RankList stage_device_list_;  // the device list in this stage
+  int64_t stage_device_size_ = 0;
+  bool infer_attrs_completed_ = false;
+  bool is_layout_config_ = false;
+  Shapes strategy_from_layout_;
+
+  bool is_auto_parallel_ = false;      // false: semi_auto_parallel; true: auto_parallel
+  bool is_assigned_parallel_ = false;  // false: origin parallel; true: dynamic_shape parallel
+  // 'corrected_input_indices_' used to store the indices of input that have ALREADY been corrected.
+  std::vector<size_t> corrected_input_indices_;
+  // Given a parallelization strategy, there is a cost.
+  std::vector<std::shared_ptr<StrategyWithCost>> strategy_cost_;
+  std::string involved_param_name_;
+  // For each input in 'inputs_', there is a bool variable indicating whether that the corresponding input is parameter
+  std::vector<bool> is_parameter_;
+  // For each input in 'inputs_', a bool variable is true if the corresponding one is a parameter or a output of
+  // pre-operator that has parameters as input.
+  std::vector<bool> is_parameter_involve_;
+  // If any input is parameter-involved, the output is parameter-involved. This variable is used in calculating
+  // peak memory cost in the training phase.
+  // -1: unset; 0: not parameter_involved; 1: parameter_involved
+  int64_t is_output_parameter_involve_ = -1;
+  // Whether this output is critical, which means that this output is included in calculating peak memory cost
+  // in the inference phase.
+  // -1 : unset; 0: not critical; 1: critical
+  int64_t is_output_critical_ = -1;
+  double outputs_total_size_ = 0.0;
+  bool is_calculated_outputs_size_ = false;
+  // for each input and output, the followings record the number of bytes of each element
+  std::vector<size_t> inputs_type_lengths_;
+  std::vector<size_t> outputs_type_lengths_;
+  std::vector<std::shared_ptr<Edge>> prev_edges_;
+  std::vector<std::shared_ptr<Edge>> succ_edges_;
+  StrategyPtr selected_strategy_;
+  int64_t selected_strategy_depth_ = -1;
+  // Used in DP algorithm
+  bool is_alive_;
+  CostPtr selected_cost_;
+  std::vector<bool> split_flag_list_;
+  std::string refkey_parameter_name_;
+  CNodePtr cnode_;
+  std::vector<CNodePtr> cnodes_;
+  int64_t used_devices_ = -1;
+  // the repeated_calc_num_ will be inserted to the last dimension of dev matrix in default
+  bool repeated_num_in_dev_matrix_right_ = true;
+  // Whether the list of available strategies is exact or approximate
+  bool is_strategy_cost_exact_ = true;
+
+ private:
+  OperatorCostPtr operator_cost_;
+  std::vector<TypePtr> outputs_type_;
+  int64_t swc_index_ = -1;
+  Status GetLayoutConfig();
+  Status CheckLayoutConfigBase();
+
+
+  cost_graph的属性：
+  // Needed by rec_parser
+  std::vector<std::vector<std::string>> inputs_tensor_name_list_;
+  // Needed by rec_parser 2
+  std::vector<std::vector<std::string>> param_users_uniqueid_list_;
+  std::map<std::string, std::string> tuple_getitem_list_;
+  std::vector<OperatorInfoPtr> ops_;
+  std::map<std::pair<OperatorInfoPtr, OperatorInfoPtr>, std::vector<EdgePtr>> edges_;
+  std::vector<std::shared_ptr<CostGraph>> connected_compoents_;
+  std::map<OperatorInfoPtr, std::vector<EdgePtr>> out_edges_;
+  std::map<OperatorInfoPtr, std::vector<EdgePtr>> in_edges_;
+  和gs的cost——graph有区别不能直接替换，遍历node
+
+gs：-------------
+class CostGraph {
+  private:
+    std::vector<CostNode> cost_nodes;
+    std::map<std::string, CostNode&> cost_node_map;
+
+
+  gs中的costnode：
+      std::string name;
+    std::string device;
+    int64_t compute_cost;
+    int64_t memory_cost;
+    int64_t output_memory;
+    std::vector<std::string> inputs;
+    std::vector<std::string> outputs;
+    std::vector<int64_t> input_comm_costs;
+    std::vector<int64_t> output_comm_costs;
+    int64_t start_time;
+    int64_t end_time;

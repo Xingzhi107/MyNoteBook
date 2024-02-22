@@ -1,0 +1,53 @@
+  for (auto &op : entire_costgraph->GetOperators()) {
+    // std::string strategy_key_name = op->cnodes()[0]->fullname_with_scope();//name1
+    std::string strategy_name = op->name();//name2
+    cout <<strategy_name<<endl;
+    // memory_cost
+    auto operator_cost = op->operator_cost();
+    // op->GetForwardMemoryCostFromCNode()
+    auto op_cost = operator_cost ->GetMemoryCost(op->inputs_tensor_info(),op->outputs_tensor_info);
+    // op->CalculateMemoryCost()：通过strategy_cost和GetMemoryCost得到
+    for (auto &swc : op->strategy_cost()) {
+      auto mem_cost = operator_cost->GetMemoryCost(swc->inputs_ptr, swc->outputs_ptr);
+      cout<<"mem_cost: "<<mem_cost<<endl;
+    }
+    
+    // for (auto it = op->strategy_cost().begin(); it != op->strategy_cost().end(); it++) {
+    //   auto mem_cost = operator_cost->GetMemoryCost(it->inputs_ptr, it->outputs_ptr);
+    //   cout<<"mem_cost: "<<mem_cost<<endl;
+    // }
+    // compute_cost
+    // operator_cost -> GetComputationCost();
+
+    // input和output的name
+    PrimitiveAttrs attrs = op->attrs();
+    // cout << "op.attrs: "<< op->attrs() << endl;
+    for (auto it = attrs.begin(); it != attrs.end(); it++) { // 遍历map中的每个元素，使用迭代器（iterator）来访问
+      auto input_names = attrs.find("input_names");
+      if (input_names != attrs.end()) {
+          // Attribute found, access the value
+          ValuePtr value = input_names->second;
+          // Do something with the value...
+          std::cout << "input_names: " << value->ToString() << std::endl;
+      } else {
+          // Attribute not found
+          std::cout << "Attribute not found." << std::endl;
+      }
+      auto output_names = attrs.find("output_names");
+      if (output_names != attrs.end()) {
+          // Attribute found, access the value
+          ValuePtr value = output_names->second;
+          // Do something with the value...
+          std::cout << "output_names: " << value->ToString() << std::endl;
+      } else {
+          // Attribute not found
+          std::cout << "Attribute not found." << std::endl;
+      }
+    }
+    // input_comm_costs
+    // output_comm_costs
+
+    //shape
+    cout<<"op.inputs_shape_: "<< op->inputs_shape() << endl;
+    cout<<"op.outputs_shape: "<< op->outputs_shape() << endl;
+  }

@@ -5,13 +5,12 @@
     // memory_cost
     auto operator_cost = op->operator_cost();
     // op->GetForwardMemoryCostFromCNode()
-    auto op_cost = operator_cost ->GetMemoryCost(op->inputs_tensor_info(),op->outputs_tensor_info);
-    // op->CalculateMemoryCost()：通过strategy_cost和GetMemoryCost得到
+
+    // op->CalculateMemoryCost()�~Z�~@~Z�~Gstrategy_cost�~R~LGetMemoryCost�~W�~H�
     for (auto &swc : op->strategy_cost()) {
       auto mem_cost = operator_cost->GetMemoryCost(swc->inputs_ptr, swc->outputs_ptr);
       cout<<"mem_cost: "<<mem_cost<<endl;
     }
-    
     // for (auto it = op->strategy_cost().begin(); it != op->strategy_cost().end(); it++) {
     //   auto mem_cost = operator_cost->GetMemoryCost(it->inputs_ptr, it->outputs_ptr);
     //   cout<<"mem_cost: "<<mem_cost<<endl;
@@ -19,10 +18,10 @@
     // compute_cost
     // operator_cost -> GetComputationCost();
 
-    // input和output的name
+    // input�~R~Loutput�~Z~Dname
     PrimitiveAttrs attrs = op->attrs();
     // cout << "op.attrs: "<< op->attrs() << endl;
-    for (auto it = attrs.begin(); it != attrs.end(); it++) { // 遍历map中的每个元素，使用迭代器（iterator）来访问
+    for (auto it = attrs.begin(); it != attrs.end(); it++) { // �~A~M�~N~Fmap中�~Z~D�~O个�~E~C�| �~L使�~T�迭代�~Y��~Hiterator�~I�~]�访�~W�
       auto input_names = attrs.find("input_names");
       if (input_names != attrs.end()) {
           // Attribute found, access the value
@@ -50,4 +49,15 @@
     //shape
     cout<<"op.inputs_shape_: "<< op->inputs_shape() << endl;
     cout<<"op.outputs_shape: "<< op->outputs_shape() << endl;
+  }
+  std::cout<<"------------------------------"<<endl;
+  vector<vector<int64_t>> my_st = {{2, 1}, {2, 1}};
+  StrategyPtr my_strategy = std::make_shared<Strategy>(0, my_st);
+  for (auto &op : entire_costgraph->GetOperators()) {
+    if (op ->name() == "CastInfo147147") {
+      op ->SetSelectedStrategy(my_strategy,0);
+      StrategyPtr s_strategy = op->selected_strategy();
+      std::cout << op->name() << ": The strategy is: " << s_strategy->ToString() << endl;
+      cout<<"change succeed!!!"<<endl;
+    }
   }

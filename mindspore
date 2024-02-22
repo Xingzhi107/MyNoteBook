@@ -8,6 +8,10 @@ ssh root@172.20.21.29（下了运行不起来）
 
 conda环境都废了
 
+ssh ai@172.20.21.181 有mindspore
+ssh ai@172.20.21.189 有pytorch
+
+
 这个错误提示表明您的/var/lib/dpkg/info/xserver-common.list文件被损坏了。要解决这个问题，您需要删除这个文件，然后重新安装xserver-common包。1 您可以按照以下的步骤进行操作：
 
 删除损坏的文件，运行以下的命令：

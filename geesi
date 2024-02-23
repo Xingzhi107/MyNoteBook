@@ -1,0 +1,879 @@
+device_map[sgp]:
+{'add': 'gpu:3', 'add_1': 'gpu:3', 'add_10': 'gpu:2', 'add_100': 'gpu:1', 'add_101': 'gpu:1', 'add_102': 'gpu:1', 'add_103': 'gpu:0', 'add_104': 'gpu:0', 'add_105': 'gpu:0', 'add_106': 'gpu:0', 'add_107': 'gpu:0', 'add_108': 'gpu:0', 'add_109': 'gpu:0', 'add_11': 'gpu:2', 'add_110': 'gpu:0', 'add_111': 'gpu:0', 'add_112': 'gpu:0', 'add_113': 'gpu:0', 'add_114': 'gpu:0', 'add_115': 'gpu:0', 'add_116': 'gpu:0', 'add_117': 'gpu:0', 'add_118': 'gpu:0', 'add_119': 'gpu:0', 'add_12': 'gpu:2', 'add_120': 'gpu:0', 'add_121': 'gpu:0', 'add_122': 'gpu:0', 'add_123': 'gpu:0', 'add_124': 'gpu:0', 'add_125': 'gpu:0', 'add_126': 'gpu:0', 'add_127': 'gpu:0', 'add_128': 'gpu:0', 'add_129': 'gpu:0', 'add_13': 'gpu:2', 'add_130': 'gpu:0', 'add_131': 'gpu:0', 'add_132': 'gpu:0', 'add_133': 'gpu:0', 'add_134': 'gpu:0', 'add_135': 'gpu:0', 'add_136': 'gpu:0', 'add_137': 'gpu:0', 'add_138': 'gpu:0', 'add_139': 'gpu:0', 'add_14': 'gpu:2', 'add_140': 'gpu:0', 'add_141': 'gpu:0', 'add_142': 'gpu:0', 'add_143': 'gpu:0', 'add_144': 'gpu:0', 'add_145': 'gpu:0', 'add_146': 'gpu:0', 'add_15': 'gpu:2', 'add_16': 'gpu:2', 'add_17': 'gpu:2', 'add_18': 'gpu:2', 'add_19': 'gpu:2', 'add_2': 'gpu:3', 'add_20': 'gpu:2', 'add_21': 'gpu:2', 'add_22': 'gpu:2', 'add_23': 'gpu:2', 'add_24': 'gpu:2', 'add_25': 'gpu:2', 'add_26': 'gpu:2', 'add_27': 'gpu:2', 'add_28': 'gpu:2', 'add_29': 'gpu:2', 'add_3': 'gpu:3', 'add_30': 'gpu:2', 'add_31': 'gpu:2', 'add_32': 'gpu:2', 'add_33': 'gpu:2', 'add_34': 'gpu:2', 'add_35': 'gpu:2', 'add_36': 'gpu:2', 'add_37': 'gpu:2', 'add_38': 'gpu:2', 'add_39': 'gpu:2', 'add_4': 'gpu:3', 'add_40': 'gpu:2', 'add_41': 'gpu:2', 'add_42': 'gpu:2', 'add_43': 'gpu:2', 'add_44': 'gpu:2', 'add_45': 'gpu:2', 'add_46': 'gpu:2', 'add_47': 'gpu:2', 'add_48': 'gpu:2', 'add_49': 'gpu:2', 'add_5': 'gpu:3', 'add_50': 'gpu:2', 'add_51': 'gpu:2', 'add_52': 'gpu:2', 'add_53': 'gpu:2', 'add_54': 'gpu:2', 'add_55': 'gpu:1', 'add_56': 'gpu:1', 'add_57': 'gpu:1', 'add_58': 'gpu:1', 'add_59': 'gpu:1', 'add_6': 'gpu:3', 'add_60': 'gpu:1', 'add_61': 'gpu:1', 'add_62': 'gpu:1', 'add_63': 'gpu:1', 'add_64': 'gpu:1', 'add_65': 'gpu:1', 'add_66': 'gpu:1', 'add_67': 'gpu:1', 'add_68': 'gpu:1', 'add_69': 'gpu:1', 'add_7': 'gpu:2', 'add_70': 'gpu:1', 'add_71': 'gpu:1', 'add_72': 'gpu:1', 'add_73': 'gpu:1', 'add_74': 'gpu:1', 'add_75': 'gpu:1', 'add_76': 'gpu:1', 'add_77': 'gpu:1', 'add_78': 'gpu:1', 'add_79': 'gpu:1', 'add_8': 'gpu:2', 'add_80': 'gpu:1', 'add_81': 'gpu:1', 'add_82': 'gpu:1', 'add_83': 'gpu:1', 'add_84': 'gpu:1', 'add_85': 'gpu:1', 'add_86': 'gpu:1', 'add_87': 'gpu:1', 'add_88': 'gpu:1', 'add_89': 'gpu:1', 'add_9': 'gpu:2', 'add_90': 'gpu:1', 'add_91': 'gpu:1', 'add_92': 'gpu:1', 'add_93': 'gpu:1', 'add_94': 'gpu:1', 'add_95': 'gpu:1', 'add_96': 'gpu:1', 'add_97': 'gpu:1', 'add_98': 'gpu:1', 'add_99': 'gpu:1', 'addmm': 'gpu:3', 'addmm_1': 'gpu:2', 'addmm_10': 'gpu:2', 'addmm_11': 'gpu:2', 'addmm_12': 'gpu:2', 'addmm_13': 'gpu:2', 'addmm_14': 'gpu:2', 'addmm_15': 'gpu:2', 'addmm_16': 'gpu:2', 'addmm_17': 'gpu:1', 'addmm_18': 'gpu:1', 'addmm_19': 'gpu:1', 'addmm_2': 'gpu:2', 'addmm_20': 'gpu:1', 'addmm_21': 'gpu:1', 'addmm_22': 'gpu:1', 'addmm_23': 'gpu:1', 'addmm_24': 'gpu:1', 'addmm_25': 'gpu:1', 'addmm_26': 'gpu:1', 'addmm_27': 'gpu:1', 'addmm_28': 'gpu:1', 'addmm_29': 'gpu:1', 'addmm_3': 'gpu:2', 'addmm_30': 'gpu:1', 'addmm_31': 'gpu:1', 'addmm_32': 'gpu:1', 'addmm_33': 'gpu:0', 'addmm_34': 'gpu:0', 'addmm_35': 'gpu:0', 'addmm_36': 'gpu:0', 'addmm_37': 'gpu:0', 'addmm_38': 'gpu:0', 'addmm_39': 'gpu:0', 'addmm_4': 'gpu:2', 'addmm_40': 'gpu:0', 'addmm_41': 'gpu:0', 'addmm_42': 'gpu:0', 'addmm_43': 'gpu:0', 'addmm_44': 'gpu:0', 'addmm_45': 'gpu:0', 'addmm_46': 'gpu:0', 'addmm_47': 'gpu:0', 'addmm_5': 'gpu:2', 'addmm_6': 'gpu:2', 'addmm_7': 'gpu:2', 'addmm_8': 'gpu:2', 'addmm_9': 'gpu:2', 'arange': 'gpu:3', 'contiguous': 'gpu:2', 'contiguous_1': 'gpu:2', 'contiguous_10': 'gpu:0', 'contiguous_11': 'gpu:0', 'contiguous_2': 'gpu:2', 'contiguous_3': 'gpu:2', 'contiguous_4': 'gpu:1', 'contiguous_5': 'gpu:1', 'contiguous_6': 'gpu:1', 'contiguous_7': 'gpu:1', 'contiguous_8': 'gpu:0', 'contiguous_9': 'gpu:0', 'drop': 'gpu:3', 'finfo': 'gpu:3', 'finfo_1': 'gpu:2', 'finfo_10': 'gpu:0', 'finfo_11': 'gpu:0', 'finfo_2': 'gpu:2', 'finfo_3': 'gpu:2', 'finfo_4': 'gpu:1', 'finfo_5': 'gpu:1', 'finfo_6': 'gpu:1', 'finfo_7': 'gpu:1', 'finfo_8': 'gpu:0', 'finfo_9': 'gpu:0', 'full': 'gpu:3', 'full_1': 'gpu:3', 'full_10': 'gpu:1', 'full_11': 'gpu:1', 'full_12': 'gpu:1', 'full_13': 'gpu:1', 'full_14': 'gpu:1', 'full_15': 'gpu:1', 'full_16': 'gpu:0', 'full_17': 'gpu:0', 'full_18': 'gpu:0', 'full_19': 'gpu:0', 'full_2': 'gpu:2', 'full_20': 'gpu:0', 'full_21': 'gpu:0', 'full_22': 'gpu:0', 'full_23': 'gpu:0', 'full_3': 'gpu:2', 'full_4': 'gpu:2', 'full_5': 'gpu:2', 'full_6': 'gpu:2', 'full_7': 'gpu:2', 'full_8': 'gpu:1', 'full_9': 'gpu:1', 'getattr_1': 'gpu:3', 'getattr_10': 'gpu:2', 'getattr_11': 'gpu:2', 'getattr_12': 'gpu:2', 'getattr_13': 'gpu:2', 'getattr_14': 'gpu:2', 'getattr_15': 'gpu:2', 'getattr_16': 'gpu:2', 'getattr_17': 'gpu:2', 'getattr_18': 'gpu:2', 'getattr_19': 'gpu:2', 'getattr_2': 'gpu:3', 'getattr_20': 'gpu:2', 'getattr_21': 'gpu:2', 'getattr_22': 'gpu:2', 'getattr_23': 'gpu:2', 'getattr_24': 'gpu:2', 'getattr_25': 'gpu:2', 'getattr_26': 'gpu:2', 'getattr_27': 'gpu:2', 'getattr_28': 'gpu:2', 'getattr_29': 'gpu:2', 'getattr_3': 'gpu:3', 'getattr_30': 'gpu:2', 'getattr_31': 'gpu:2', 'getattr_32': 'gpu:2', 'getattr_33': 'gpu:2', 'getattr_34': 'gpu:1', 'getattr_35': 'gpu:1', 'getattr_36': 'gpu:1', 'getattr_37': 'gpu:1', 'getattr_38': 'gpu:1', 'getattr_39': 'gpu:1', 'getattr_4': 'gpu:3', 'getattr_40': 'gpu:1', 'getattr_41': 'gpu:2', 'getattr_42': 'gpu:1', 'getattr_43': 'gpu:1', 'getattr_44': 'gpu:1', 'getattr_45': 'gpu:1', 'getattr_46': 'gpu:1', 'getattr_47': 'gpu:1', 'getattr_48': 'gpu:1', 'getattr_49': 'gpu:1', 'getattr_5': 'gpu:3', 'getattr_50': 'gpu:1', 'getattr_51': 'gpu:1', 'getattr_52': 'gpu:1', 'getattr_53': 'gpu:1', 'getattr_54': 'gpu:1', 'getattr_55': 'gpu:1', 'getattr_56': 'gpu:1', 'getattr_57': 'gpu:1', 'getattr_58': 'gpu:1', 'getattr_59': 'gpu:1', 'getattr_6': 'gpu:3', 'getattr_60': 'gpu:1', 'getattr_61': 'gpu:1', 'getattr_62': 'gpu:1', 'getattr_63': 'gpu:1', 'getattr_64': 'gpu:1', 'getattr_65': 'gpu:1', 'getattr_66': 'gpu:0', 'getattr_67': 'gpu:0', 'getattr_68': 'gpu:0', 'getattr_69': 'gpu:0', 'getattr_7': 'gpu:3', 'getattr_70': 'gpu:0', 'getattr_71': 'gpu:0', 'getattr_72': 'gpu:0', 'getattr_73': 'gpu:1', 'getattr_74': 'gpu:0', 'getattr_75': 'gpu:0', 'getattr_76': 'gpu:0', 'getattr_77': 'gpu:0', 'getattr_78': 'gpu:0', 'getattr_79': 'gpu:0', 'getattr_8': 'gpu:3', 'getattr_80': 'gpu:0', 'getattr_81': 'gpu:0', 'getattr_82': 'gpu:0', 'getattr_83': 'gpu:0', 'getattr_84': 'gpu:0', 'getattr_85': 'gpu:0', 'getattr_86': 'gpu:0', 'getattr_87': 'gpu:0', 'getattr_88': 'gpu:0', 'getattr_89': 'gpu:0', 'getattr_9': 'gpu:3', 'getattr_90': 'gpu:0', 'getattr_91': 'gpu:0', 'getattr_92': 'gpu:0', 'getattr_93': 'gpu:0', 'getattr_94': 'gpu:0', 'getattr_95': 'gpu:0', 'getattr_96': 'gpu:0', 'getattr_97': 'gpu:0', 'getitem': 'gpu:3', 'getitem_1': 'gpu:3', 'getitem_10': 'gpu:3', 'getitem_100': 'gpu:1', 'getitem_101': 'gpu:1', 'getitem_102': 'gpu:1', 'getitem_103': 'gpu:1', 'getitem_104': 'gpu:1', 'getitem_105': 'gpu:1', 'getitem_106': 'gpu:1', 'getitem_107': 'gpu:0', 'getitem_108': 'gpu:0', 'getitem_109': 'gpu:0', 'getitem_11': 'gpu:2', 'getitem_110': 'gpu:0', 'getitem_111': 'gpu:0', 'getitem_112': 'gpu:0', 'getitem_113': 'gpu:0', 'getitem_114': 'gpu:0', 'getitem_115': 'gpu:0', 'getitem_116': 'gpu:0', 'getitem_117': 'gpu:0', 'getitem_118': 'gpu:0', 'getitem_119': 'gpu:0', 'getitem_12': 'gpu:2', 'getitem_120': 'gpu:0', 'getitem_121': 'gpu:0', 'getitem_122': 'gpu:0', 'getitem_123': 'gpu:0', 'getitem_124': 'gpu:0', 'getitem_125': 'gpu:0', 'getitem_126': 'gpu:0', 'getitem_127': 'gpu:0', 'getitem_128': 'gpu:0', 'getitem_129': 'gpu:0', 'getitem_13': 'gpu:2', 'getitem_130': 'gpu:0', 'getitem_131': 'gpu:0', 'getitem_132': 'gpu:0', 'getitem_133': 'gpu:0', 'getitem_134': 'gpu:0', 'getitem_135': 'gpu:0', 'getitem_136': 'gpu:0', 'getitem_137': 'gpu:0', 'getitem_138': 'gpu:0', 'getitem_139': 'gpu:0', 'getitem_14': 'gpu:2', 'getitem_140': 'gpu:0', 'getitem_141': 'gpu:0', 'getitem_142': 'gpu:0', 'getitem_143': 'gpu:0', 'getitem_144': 'gpu:0', 'getitem_145': 'gpu:0', 'getitem_146': 'gpu:0', 'getitem_147': 'gpu:0', 'getitem_15': 'gpu:2', 'getitem_16': 'gpu:2', 'getitem_17': 'gpu:2', 'getitem_18': 'gpu:2', 'getitem_19': 'gpu:2', 'getitem_2': 'gpu:3', 'getitem_20': 'gpu:2', 'getitem_21': 'gpu:2', 'getitem_22': 'gpu:2', 'getitem_23': 'gpu:2', 'getitem_24': 'gpu:2', 'getitem_25': 'gpu:2', 'getitem_26': 'gpu:2', 'getitem_27': 'gpu:2', 'getitem_28': 'gpu:2', 'getitem_29': 'gpu:2', 'getitem_3': 'gpu:3', 'getitem_30': 'gpu:2', 'getitem_31': 'gpu:2', 'getitem_32': 'gpu:2', 'getitem_33': 'gpu:2', 'getitem_34': 'gpu:2', 'getitem_35': 'gpu:2', 'getitem_36': 'gpu:2', 'getitem_37': 'gpu:2', 'getitem_38': 'gpu:2', 'getitem_39': 'gpu:2', 'getitem_4': 'gpu:3', 'getitem_40': 'gpu:2', 'getitem_41': 'gpu:2', 'getitem_42': 'gpu:2', 'getitem_43': 'gpu:2', 'getitem_44': 'gpu:2', 'getitem_45': 'gpu:2', 'getitem_46': 'gpu:2', 'getitem_47': 'gpu:2', 'getitem_48': 'gpu:2', 'getitem_49': 'gpu:2', 'getitem_5': 'gpu:3', 'getitem_50': 'gpu:2', 'getitem_51': 'gpu:2', 'getitem_52': 'gpu:2', 'getitem_53': 'gpu:2', 'getitem_54': 'gpu:2', 'getitem_55': 'gpu:2', 'getitem_56': 'gpu:2', 'getitem_57': 'gpu:2', 'getitem_58': 'gpu:2', 'getitem_59': 'gpu:1', 'getitem_6': 'gpu:3', 'getitem_60': 'gpu:1', 'getitem_61': 'gpu:1', 'getitem_62': 'gpu:1', 'getitem_63': 'gpu:1', 'getitem_64': 'gpu:1', 'getitem_65': 'gpu:1', 'getitem_66': 'gpu:1', 'getitem_67': 'gpu:1', 'getitem_68': 'gpu:1', 'getitem_69': 'gpu:1', 'getitem_7': 'gpu:3', 'getitem_70': 'gpu:1', 'getitem_71': 'gpu:1', 'getitem_72': 'gpu:1', 'getitem_73': 'gpu:1', 'getitem_74': 'gpu:1', 'getitem_75': 'gpu:1', 'getitem_76': 'gpu:1', 'getitem_77': 'gpu:1', 'getitem_78': 'gpu:1', 'getitem_79': 'gpu:1', 'getitem_8': 'gpu:3', 'getitem_80': 'gpu:1', 'getitem_81': 'gpu:1', 'getitem_82': 'gpu:1', 'getitem_83': 'gpu:1', 'getitem_84': 'gpu:1', 'getitem_85': 'gpu:1', 'getitem_86': 'gpu:1', 'getitem_87': 'gpu:1', 'getitem_88': 'gpu:1', 'getitem_89': 'gpu:1', 'getitem_9': 'gpu:3', 'getitem_90': 'gpu:1', 'getitem_91': 'gpu:1', 'getitem_92': 'gpu:1', 'getitem_93': 'gpu:1', 'getitem_94': 'gpu:1', 'getitem_95': 'gpu:1', 'getitem_96': 'gpu:1', 'getitem_97': 'gpu:1', 'getitem_98': 'gpu:1', 'getitem_99': 'gpu:1', 'h_0_attn_attn_dropout': 'gpu:2', 'h_0_attn_bias': 'gpu:3', 'h_0_attn_c_attn_bias': 'gpu:3', 'h_0_attn_c_attn_weight': 'gpu:3', 'h_0_attn_c_proj_bias': 'gpu:3', 'h_0_attn_c_proj_weight': 'gpu:3', 'h_0_attn_resid_dropout': 'gpu:2', 'h_0_ln_1': 'gpu:3', 'h_0_ln_2': 'gpu:2', 'h_0_mlp_c_fc_bias': 'gpu:3', 'h_0_mlp_c_fc_weight': 'gpu:3', 'h_0_mlp_c_proj_bias': 'gpu:3', 'h_0_mlp_c_proj_weight': 'gpu:3', 'h_0_mlp_dropout': 'gpu:2', 'h_10_attn_attn_dropout': 'gpu:0', 'h_10_attn_bias': 'gpu:3', 'h_10_attn_c_attn_bias': 'gpu:3', 'h_10_attn_c_attn_weight': 'gpu:3', 'h_10_attn_c_proj_bias': 'gpu:3', 'h_10_attn_c_proj_weight': 'gpu:3', 'h_10_attn_resid_dropout': 'gpu:0', 'h_10_ln_1': 'gpu:0', 'h_10_ln_2': 'gpu:0', 'h_10_mlp_c_fc_bias': 'gpu:3', 'h_10_mlp_c_fc_weight': 'gpu:3', 'h_10_mlp_c_proj_bias': 'gpu:3', 'h_10_mlp_c_proj_weight': 'gpu:3', 'h_10_mlp_dropout': 'gpu:0', 'h_11_attn_attn_dropout': 'gpu:0', 'h_11_attn_bias': 'gpu:3', 'h_11_attn_c_attn_bias': 'gpu:3', 'h_11_attn_c_attn_weight': 'gpu:3', 'h_11_attn_c_proj_bias': 'gpu:3', 'h_11_attn_c_proj_weight': 'gpu:3', 'h_11_attn_resid_dropout': 'gpu:0', 'h_11_ln_1': 'gpu:0', 'h_11_ln_2': 'gpu:0', 'h_11_mlp_c_fc_bias': 'gpu:3', 'h_11_mlp_c_fc_weight': 'gpu:3', 'h_11_mlp_c_proj_bias': 'gpu:3', 'h_11_mlp_c_proj_weight': 'gpu:3', 'h_11_mlp_dropout': 'gpu:0', 'h_1_attn_attn_dropout': 'gpu:2', 'h_1_attn_bias': 'gpu:3', 'h_1_attn_c_attn_bias': 'gpu:3', 'h_1_attn_c_attn_weight': 'gpu:3', 'h_1_attn_c_proj_bias': 'gpu:3', 'h_1_attn_c_proj_weight': 'gpu:3', 'h_1_attn_resid_dropout': 'gpu:2', 'h_1_ln_1': 'gpu:2', 'h_1_ln_2': 'gpu:2', 'h_1_mlp_c_fc_bias': 'gpu:3', 'h_1_mlp_c_fc_weight': 'gpu:3', 'h_1_mlp_c_proj_bias': 'gpu:3', 'h_1_mlp_c_proj_weight': 'gpu:3', 'h_1_mlp_dropout': 'gpu:2', 'h_2_attn_attn_dropout': 'gpu:2', 'h_2_attn_bias': 'gpu:3', 'h_2_attn_c_attn_bias': 'gpu:3', 'h_2_attn_c_attn_weight': 'gpu:3', 'h_2_attn_c_proj_bias': 'gpu:3', 'h_2_attn_c_proj_weight': 'gpu:3', 'h_2_attn_resid_dropout': 'gpu:2', 'h_2_ln_1': 'gpu:2', 'h_2_ln_2': 'gpu:2', 'h_2_mlp_c_fc_bias': 'gpu:3', 'h_2_mlp_c_fc_weight': 'gpu:3', 'h_2_mlp_c_proj_bias': 'gpu:3', 'h_2_mlp_c_proj_weight': 'gpu:3', 'h_2_mlp_dropout': 'gpu:2', 'h_3_attn_attn_dropout': 'gpu:2', 'h_3_attn_bias': 'gpu:3', 'h_3_attn_c_attn_bias': 'gpu:3', 'h_3_attn_c_attn_weight': 'gpu:3', 'h_3_attn_c_proj_bias': 'gpu:3', 'h_3_attn_c_proj_weight': 'gpu:3', 'h_3_attn_resid_dropout': 'gpu:2', 'h_3_ln_1': 'gpu:2', 'h_3_ln_2': 'gpu:2', 'h_3_mlp_c_fc_bias': 'gpu:3', 'h_3_mlp_c_fc_weight': 'gpu:3', 'h_3_mlp_c_proj_bias': 'gpu:3', 'h_3_mlp_c_proj_weight': 'gpu:3', 'h_3_mlp_dropout': 'gpu:2', 'h_4_attn_attn_dropout': 'gpu:1', 'h_4_attn_bias': 'gpu:3', 'h_4_attn_c_attn_bias': 'gpu:3', 'h_4_attn_c_attn_weight': 'gpu:3', 'h_4_attn_c_proj_bias': 'gpu:3', 'h_4_attn_c_proj_weight': 'gpu:3', 'h_4_attn_resid_dropout': 'gpu:1', 'h_4_ln_1': 'gpu:2', 'h_4_ln_2': 'gpu:1', 'h_4_mlp_c_fc_bias': 'gpu:3', 'h_4_mlp_c_fc_weight': 'gpu:3', 'h_4_mlp_c_proj_bias': 'gpu:3', 'h_4_mlp_c_proj_weight': 'gpu:3', 'h_4_mlp_dropout': 'gpu:1', 'h_5_attn_attn_dropout': 'gpu:1', 'h_5_attn_bias': 'gpu:3', 'h_5_attn_c_attn_bias': 'gpu:3', 'h_5_attn_c_attn_weight': 'gpu:3', 'h_5_attn_c_proj_bias': 'gpu:3', 'h_5_attn_c_proj_weight': 'gpu:3', 'h_5_attn_resid_dropout': 'gpu:1', 'h_5_ln_1': 'gpu:1', 'h_5_ln_2': 'gpu:1', 'h_5_mlp_c_fc_bias': 'gpu:3', 'h_5_mlp_c_fc_weight': 'gpu:3', 'h_5_mlp_c_proj_bias': 'gpu:3', 'h_5_mlp_c_proj_weight': 'gpu:3', 'h_5_mlp_dropout': 'gpu:1', 'h_6_attn_attn_dropout': 'gpu:1', 'h_6_attn_bias': 'gpu:3', 'h_6_attn_c_attn_bias': 'gpu:3', 'h_6_attn_c_attn_weight': 'gpu:3', 'h_6_attn_c_proj_bias': 'gpu:3', 'h_6_attn_c_proj_weight': 'gpu:3', 'h_6_attn_resid_dropout': 'gpu:1', 'h_6_ln_1': 'gpu:1', 'h_6_ln_2': 'gpu:1', 'h_6_mlp_c_fc_bias': 'gpu:3', 'h_6_mlp_c_fc_weight': 'gpu:3', 'h_6_mlp_c_proj_bias': 'gpu:3', 'h_6_mlp_c_proj_weight': 'gpu:3', 'h_6_mlp_dropout': 'gpu:1', 'h_7_attn_attn_dropout': 'gpu:1', 'h_7_attn_bias': 'gpu:3', 'h_7_attn_c_attn_bias': 'gpu:3', 'h_7_attn_c_attn_weight': 'gpu:3', 'h_7_attn_c_proj_bias': 'gpu:3', 'h_7_attn_c_proj_weight': 'gpu:3', 'h_7_attn_resid_dropout': 'gpu:1', 'h_7_ln_1': 'gpu:1', 'h_7_ln_2': 'gpu:1', 'h_7_mlp_c_fc_bias': 'gpu:3', 'h_7_mlp_c_fc_weight': 'gpu:3', 'h_7_mlp_c_proj_bias': 'gpu:3', 'h_7_mlp_c_proj_weight': 'gpu:3', 'h_7_mlp_dropout': 'gpu:1', 'h_8_attn_attn_dropout': 'gpu:0', 'h_8_attn_bias': 'gpu:3', 'h_8_attn_c_attn_bias': 'gpu:3', 'h_8_attn_c_attn_weight': 'gpu:3', 'h_8_attn_c_proj_bias': 'gpu:3', 'h_8_attn_c_proj_weight': 'gpu:3', 'h_8_attn_resid_dropout': 'gpu:0', 'h_8_ln_1': 'gpu:1', 'h_8_ln_2': 'gpu:0', 'h_8_mlp_c_fc_bias': 'gpu:3', 'h_8_mlp_c_fc_weight': 'gpu:3', 'h_8_mlp_c_proj_bias': 'gpu:3', 'h_8_mlp_c_proj_weight': 'gpu:3', 'h_8_mlp_dropout': 'gpu:0', 'h_9_attn_attn_dropout': 'gpu:0', 'h_9_attn_bias': 'gpu:3', 'h_9_attn_c_attn_bias': 'gpu:3', 'h_9_attn_c_attn_weight': 'gpu:3', 'h_9_attn_c_proj_bias': 'gpu:3', 'h_9_attn_c_proj_weight': 'gpu:3', 'h_9_attn_resid_dropout': 'gpu:0', 'h_9_ln_1': 'gpu:0', 'h_9_ln_2': 'gpu:0', 'h_9_mlp_c_fc_bias': 'gpu:3', 'h_9_mlp_c_fc_weight': 'gpu:3', 'h_9_mlp_c_proj_bias': 'gpu:3', 'h_9_mlp_c_proj_weight': 'gpu:3', 'h_9_mlp_dropout': 'gpu:0', 'input_ids': 'gpu:3', 'ln_f': 'gpu:0', 'matmul': 'gpu:3', 'matmul_1': 'gpu:2', 'matmul_10': 'gpu:1', 'matmul_11': 'gpu:1', 'matmul_12': 'gpu:1', 'matmul_13': 'gpu:1', 'matmul_14': 'gpu:1', 'matmul_15': 'gpu:1', 'matmul_16': 'gpu:0', 'matmul_17': 'gpu:0', 'matmul_18': 'gpu:0', 'matmul_19': 'gpu:0', 'matmul_2': 'gpu:2', 'matmul_20': 'gpu:0', 'matmul_21': 'gpu:0', 'matmul_22': 'gpu:0', 'matmul_23': 'gpu:0', 'matmul_3': 'gpu:2', 'matmul_4': 'gpu:2', 'matmul_5': 'gpu:2', 'matmul_6': 'gpu:2', 'matmul_7': 'gpu:2', 'matmul_8': 'gpu:1', 'matmul_9': 'gpu:1', 'mul': 'gpu:2', 'mul_1': 'gpu:2', 'mul_10': 'gpu:2', 'mul_11': 'gpu:2', 'mul_12': 'gpu:2', 'mul_13': 'gpu:2', 'mul_14': 'gpu:2', 'mul_15': 'gpu:2', 'mul_16': 'gpu:1', 'mul_17': 'gpu:1', 'mul_18': 'gpu:1', 'mul_19': 'gpu:1', 'mul_2': 'gpu:2', 'mul_20': 'gpu:1', 'mul_21': 'gpu:1', 'mul_22': 'gpu:1', 'mul_23': 'gpu:1', 'mul_24': 'gpu:1', 'mul_25': 'gpu:1', 'mul_26': 'gpu:1', 'mul_27': 'gpu:1', 'mul_28': 'gpu:1', 'mul_29': 'gpu:1', 'mul_3': 'gpu:2', 'mul_30': 'gpu:1', 'mul_31': 'gpu:1', 'mul_32': 'gpu:0', 'mul_33': 'gpu:0', 'mul_34': 'gpu:0', 'mul_35': 'gpu:0', 'mul_36': 'gpu:0', 'mul_37': 'gpu:0', 'mul_38': 'gpu:0', 'mul_39': 'gpu:0', 'mul_4': 'gpu:2', 'mul_40': 'gpu:0', 'mul_41': 'gpu:0', 'mul_42': 'gpu:0', 'mul_43': 'gpu:0', 'mul_44': 'gpu:0', 'mul_45': 'gpu:0', 'mul_46': 'gpu:0', 'mul_47': 'gpu:0', 'mul_5': 'gpu:2', 'mul_6': 'gpu:2', 'mul_7': 'gpu:2', 'mul_8': 'gpu:2', 'mul_9': 'gpu:2', 'output': 'gpu:0', 'permute': 'gpu:3', 'permute_1': 'gpu:3', 'permute_10': 'gpu:2', 'permute_11': 'gpu:2', 'permute_12': 'gpu:2', 'permute_13': 'gpu:2', 'permute_14': 'gpu:2', 'permute_15': 'gpu:2', 'permute_16': 'gpu:2', 'permute_17': 'gpu:2', 'permute_18': 'gpu:2', 'permute_19': 'gpu:1', 'permute_2': 'gpu:3', 'permute_20': 'gpu:1', 'permute_21': 'gpu:1', 'permute_22': 'gpu:1', 'permute_23': 'gpu:1', 'permute_24': 'gpu:1', 'permute_25': 'gpu:1', 'permute_26': 'gpu:1', 'permute_27': 'gpu:1', 'permute_28': 'gpu:1', 'permute_29': 'gpu:1', 'permute_3': 'gpu:2', 'permute_30': 'gpu:1', 'permute_31': 'gpu:1', 'permute_32': 'gpu:1', 'permute_33': 'gpu:1', 'permute_34': 'gpu:1', 'permute_35': 'gpu:0', 'permute_36': 'gpu:0', 'permute_37': 'gpu:0', 'permute_38': 'gpu:0', 'permute_39': 'gpu:0', 'permute_4': 'gpu:2', 'permute_40': 'gpu:0', 'permute_41': 'gpu:0', 'permute_42': 'gpu:0', 'permute_43': 'gpu:0', 'permute_44': 'gpu:0', 'permute_45': 'gpu:0', 'permute_46': 'gpu:0', 'permute_47': 'gpu:0', 'permute_5': 'gpu:2', 'permute_6': 'gpu:2', 'permute_7': 'gpu:2', 'permute_8': 'gpu:2', 'permute_9': 'gpu:2', 'pow_1': 'gpu:3', 'pow_10': 'gpu:1', 'pow_11': 'gpu:1', 'pow_12': 'gpu:1', 'pow_13': 'gpu:1', 'pow_14': 'gpu:1', 'pow_15': 'gpu:1', 'pow_16': 'gpu:1', 'pow_17': 'gpu:1', 'pow_18': 'gpu:0', 'pow_19': 'gpu:0', 'pow_2': 'gpu:2', 'pow_20': 'gpu:0', 'pow_21': 'gpu:0', 'pow_22': 'gpu:0', 'pow_23': 'gpu:0', 'pow_24': 'gpu:0', 'pow_3': 'gpu:2', 'pow_4': 'gpu:2', 'pow_5': 'gpu:2', 'pow_6': 'gpu:2', 'pow_7': 'gpu:2', 'pow_8': 'gpu:2', 'pow_9': 'gpu:2', 'size': 'gpu:3', 'size_1': 'gpu:3', 'size_10': 'gpu:3', 'size_100': 'gpu:1', 'size_101': 'gpu:1', 'size_102': 'gpu:1', 'size_103': 'gpu:1', 'size_104': 'gpu:1', 'size_105': 'gpu:1', 'size_106': 'gpu:1', 'size_107': 'gpu:1', 'size_108': 'gpu:1', 'size_109': 'gpu:1', 'size_11': 'gpu:2', 'size_110': 'gpu:1', 'size_111': 'gpu:1', 'size_112': 'gpu:1', 'size_113': 'gpu:1', 'size_114': 'gpu:1', 'size_115': 'gpu:1', 'size_116': 'gpu:1', 'size_117': 'gpu:1', 'size_118': 'gpu:1', 'size_119': 'gpu:1', 'size_12': 'gpu:2', 'size_120': 'gpu:1', 'size_121': 'gpu:1', 'size_122': 'gpu:1', 'size_123': 'gpu:1', 'size_124': 'gpu:1', 'size_125': 'gpu:1', 'size_126': 'gpu:1', 'size_127': 'gpu:1', 'size_128': 'gpu:1', 'size_129': 'gpu:1', 'size_13': 'gpu:2', 'size_130': 'gpu:1', 'size_131': 'gpu:0', 'size_132': 'gpu:0', 'size_133': 'gpu:0', 'size_134': 'gpu:0', 'size_135': 'gpu:0', 'size_136': 'gpu:0', 'size_137': 'gpu:0', 'size_138': 'gpu:0', 'size_139': 'gpu:0', 'size_14': 'gpu:2', 'size_140': 'gpu:0', 'size_141': 'gpu:0', 'size_142': 'gpu:0', 'size_143': 'gpu:0', 'size_144': 'gpu:0', 'size_145': 'gpu:0', 'size_146': 'gpu:0', 'size_147': 'gpu:0', 'size_148': 'gpu:0', 'size_149': 'gpu:0', 'size_15': 'gpu:2', 'size_150': 'gpu:0', 'size_151': 'gpu:0', 'size_152': 'gpu:0', 'size_153': 'gpu:0', 'size_154': 'gpu:0', 'size_155': 'gpu:0', 'size_156': 'gpu:0', 'size_157': 'gpu:0', 'size_158': 'gpu:0', 'size_159': 'gpu:0', 'size_16': 'gpu:2', 'size_160': 'gpu:0', 'size_161': 'gpu:0', 'size_162': 'gpu:0', 'size_163': 'gpu:0', 'size_164': 'gpu:0', 'size_165': 'gpu:0', 'size_166': 'gpu:0', 'size_167': 'gpu:0', 'size_168': 'gpu:0', 'size_169': 'gpu:0', 'size_17': 'gpu:2', 'size_170': 'gpu:0', 'size_171': 'gpu:0', 'size_172': 'gpu:0', 'size_173': 'gpu:0', 'size_174': 'gpu:0', 'size_175': 'gpu:0', 'size_176': 'gpu:0', 'size_177': 'gpu:0', 'size_178': 'gpu:0', 'size_179': 'gpu:0', 'size_18': 'gpu:2', 'size_180': 'gpu:0', 'size_181': 'gpu:0', 'size_182': 'gpu:0', 'size_19': 'gpu:2', 'size_2': 'gpu:3', 'size_20': 'gpu:2', 'size_21': 'gpu:2', 'size_22': 'gpu:2', 'size_23': 'gpu:2', 'size_24': 'gpu:2', 'size_25': 'gpu:2', 'size_26': 'gpu:2', 'size_27': 'gpu:2', 'size_28': 'gpu:2', 'size_29': 'gpu:2', 'size_3': 'gpu:3', 'size_30': 'gpu:2', 'size_31': 'gpu:2', 'size_32': 'gpu:2', 'size_33': 'gpu:2', 'size_34': 'gpu:2', 'size_35': 'gpu:2', 'size_36': 'gpu:2', 'size_37': 'gpu:2', 'size_38': 'gpu:2', 'size_39': 'gpu:2', 'size_4': 'gpu:3', 'size_40': 'gpu:2', 'size_41': 'gpu:2', 'size_42': 'gpu:2', 'size_43': 'gpu:2', 'size_44': 'gpu:2', 'size_45': 'gpu:2', 'size_46': 'gpu:2', 'size_47': 'gpu:2', 'size_48': 'gpu:2', 'size_49': 'gpu:2', 'size_5': 'gpu:3', 'size_50': 'gpu:2', 'size_51': 'gpu:2', 'size_52': 'gpu:2', 'size_53': 'gpu:2', 'size_54': 'gpu:2', 'size_55': 'gpu:2', 'size_56': 'gpu:2', 'size_57': 'gpu:2', 'size_58': 'gpu:2', 'size_59': 'gpu:2', 'size_6': 'gpu:3', 'size_60': 'gpu:2', 'size_61': 'gpu:2', 'size_62': 'gpu:2', 'size_63': 'gpu:2', 'size_64': 'gpu:2', 'size_65': 'gpu:2', 'size_66': 'gpu:2', 'size_67': 'gpu:2', 'size_68': 'gpu:2', 'size_69': 'gpu:2', 'size_7': 'gpu:3', 'size_70': 'gpu:2', 'size_71': 'gpu:1', 'size_72': 'gpu:1', 'size_73': 'gpu:1', 'size_74': 'gpu:1', 'size_75': 'gpu:1', 'size_76': 'gpu:1', 'size_77': 'gpu:1', 'size_78': 'gpu:1', 'size_79': 'gpu:1', 'size_8': 'gpu:3', 'size_80': 'gpu:1', 'size_81': 'gpu:1', 'size_82': 'gpu:1', 'size_83': 'gpu:1', 'size_84': 'gpu:1', 'size_85': 'gpu:1', 'size_86': 'gpu:1', 'size_87': 'gpu:1', 'size_88': 'gpu:1', 'size_89': 'gpu:1', 'size_9': 'gpu:3', 'size_90': 'gpu:1', 'size_91': 'gpu:1', 'size_92': 'gpu:1', 'size_93': 'gpu:1', 'size_94': 'gpu:1', 'size_95': 'gpu:1', 'size_96': 'gpu:1', 'size_97': 'gpu:1', 'size_98': 'gpu:1', 'size_99': 'gpu:1', 'softmax': 'gpu:2', 'softmax_1': 'gpu:2', 'softmax_10': 'gpu:0', 'softmax_11': 'gpu:0', 'softmax_2': 'gpu:2', 'softmax_3': 'gpu:2', 'softmax_4': 'gpu:1', 'softmax_5': 'gpu:1', 'softmax_6': 'gpu:1', 'softmax_7': 'gpu:1', 'softmax_8': 'gpu:0', 'softmax_9': 'gpu:0', 'split': 'gpu:3', 'split_1': 'gpu:2', 'split_10': 'gpu:0', 'split_11': 'gpu:0', 'split_2': 'gpu:2', 'split_3': 'gpu:2', 'split_4': 'gpu:2', 'split_5': 'gpu:1', 'split_6': 'gpu:1', 'split_7': 'gpu:1', 'split_8': 'gpu:1', 'split_9': 'gpu:0', 'sub': 'gpu:3', 'sub_1': 'gpu:2', 'sub_10': 'gpu:0', 'sub_11': 'gpu:0', 'sub_2': 'gpu:2', 'sub_3': 'gpu:2', 'sub_4': 'gpu:2', 'sub_5': 'gpu:1', 'sub_6': 'gpu:1', 'sub_7': 'gpu:1', 'sub_8': 'gpu:1', 'sub_9': 'gpu:0', 'tanh': 'gpu:2', 'tanh_1': 'gpu:2', 'tanh_10': 'gpu:0', 'tanh_11': 'gpu:0', 'tanh_2': 'gpu:2', 'tanh_3': 'gpu:2', 'tanh_4': 'gpu:1', 'tanh_5': 'gpu:1', 'tanh_6': 'gpu:1', 'tanh_7': 'gpu:1', 'tanh_8': 'gpu:0', 'tanh_9': 'gpu:0', 'to': 'gpu:3', 'to_1': 'gpu:3', 'to_10': 'gpu:1', 'to_11': 'gpu:1', 'to_12': 'gpu:1', 'to_13': 'gpu:1', 'to_14': 'gpu:1', 'to_15': 'gpu:1', 'to_16': 'gpu:0', 'to_17': 'gpu:0', 'to_18': 'gpu:0', 'to_19': 'gpu:0', 'to_2': 'gpu:2', 'to_20': 'gpu:0', 'to_21': 'gpu:0', 'to_22': 'gpu:0', 'to_23': 'gpu:0', 'to_3': 'gpu:2', 'to_4': 'gpu:2', 'to_5': 'gpu:2', 'to_6': 'gpu:2', 'to_7': 'gpu:2', 'to_8': 'gpu:1', 'to_9': 'gpu:1', 'transpose': 'gpu:3', 'transpose_1': 'gpu:2', 'transpose_10': 'gpu:0', 'transpose_11': 'gpu:0', 'transpose_2': 'gpu:2', 'transpose_3': 'gpu:2', 'transpose_4': 'gpu:2', 'transpose_5': 'gpu:1', 'transpose_6': 'gpu:1', 'transpose_7': 'gpu:1', 'transpose_8': 'gpu:1', 'transpose_9': 'gpu:0', 'truediv': 'gpu:3', 'truediv_1': 'gpu:2', 'truediv_10': 'gpu:0', 'truediv_11': 'gpu:0', 'truediv_2': 'gpu:2', 'truediv_3': 'gpu:2', 'truediv_4': 'gpu:1', 'truediv_5': 'gpu:1', 'truediv_6': 'gpu:1', 'truediv_7': 'gpu:1', 'truediv_8': 'gpu:0', 'truediv_9': 'gpu:0', 'type_1': 'gpu:2', 'type_10': 'gpu:0', 'type_11': 'gpu:0', 'type_12': 'gpu:0', 'type_2': 'gpu:2', 'type_3': 'gpu:2', 'type_4': 'gpu:2', 'type_5': 'gpu:1', 'type_6': 'gpu:1', 'type_7': 'gpu:1', 'type_8': 'gpu:1', 'type_9': 'gpu:0', 'unsqueeze': 'gpu:3', 'view': 'gpu:3', 'view_1': 'gpu:3', 'view_10': 'gpu:2', 'view_100': 'gpu:1', 'view_101': 'gpu:1', 'view_102': 'gpu:1', 'view_103': 'gpu:0', 'view_104': 'gpu:0', 'view_105': 'gpu:0', 'view_106': 'gpu:0', 'view_107': 'gpu:0', 'view_108': 'gpu:0', 'view_109': 'gpu:0', 'view_11': 'gpu:2', 'view_110': 'gpu:0', 'view_111': 'gpu:0', 'view_112': 'gpu:0', 'view_113': 'gpu:0', 'view_114': 'gpu:0', 'view_115': 'gpu:0', 'view_116': 'gpu:0', 'view_117': 'gpu:0', 'view_118': 'gpu:0', 'view_119': 'gpu:0', 'view_12': 'gpu:2', 'view_120': 'gpu:0', 'view_121': 'gpu:0', 'view_122': 'gpu:0', 'view_123': 'gpu:0', 'view_124': 'gpu:0', 'view_125': 'gpu:0', 'view_126': 'gpu:0', 'view_127': 'gpu:0', 'view_128': 'gpu:0', 'view_129': 'gpu:0', 'view_13': 'gpu:2', 'view_130': 'gpu:0', 'view_131': 'gpu:0', 'view_132': 'gpu:0', 'view_133': 'gpu:0', 'view_134': 'gpu:0', 'view_135': 'gpu:0', 'view_136': 'gpu:0', 'view_137': 'gpu:0', 'view_138': 'gpu:0', 'view_139': 'gpu:0', 'view_14': 'gpu:2', 'view_140': 'gpu:0', 'view_141': 'gpu:0', 'view_142': 'gpu:0', 'view_143': 'gpu:0', 'view_144': 'gpu:0', 'view_145': 'gpu:0', 'view_146': 'gpu:0', 'view_15': 'gpu:2', 'view_16': 'gpu:2', 'view_17': 'gpu:2', 'view_18': 'gpu:2', 'view_19': 'gpu:2', 'view_2': 'gpu:3', 'view_20': 'gpu:2', 'view_21': 'gpu:2', 'view_22': 'gpu:2', 'view_23': 'gpu:2', 'view_24': 'gpu:2', 'view_25': 'gpu:2', 'view_26': 'gpu:2', 'view_27': 'gpu:2', 'view_28': 'gpu:2', 'view_29': 'gpu:2', 'view_3': 'gpu:3', 'view_30': 'gpu:2', 'view_31': 'gpu:2', 'view_32': 'gpu:2', 'view_33': 'gpu:2', 'view_34': 'gpu:2', 'view_35': 'gpu:2', 'view_36': 'gpu:2', 'view_37': 'gpu:2', 'view_38': 'gpu:2', 'view_39': 'gpu:2', 'view_4': 'gpu:3', 'view_40': 'gpu:2', 'view_41': 'gpu:2', 'view_42': 'gpu:2', 'view_43': 'gpu:2', 'view_44': 'gpu:2', 'view_45': 'gpu:2', 'view_46': 'gpu:2', 'view_47': 'gpu:2', 'view_48': 'gpu:2', 'view_49': 'gpu:2', 'view_5': 'gpu:3', 'view_50': 'gpu:2', 'view_51': 'gpu:2', 'view_52': 'gpu:2', 'view_53': 'gpu:2', 'view_54': 'gpu:2', 'view_55': 'gpu:1', 'view_56': 'gpu:1', 'view_57': 'gpu:1', 'view_58': 'gpu:1', 'view_59': 'gpu:1', 'view_6': 'gpu:3', 'view_60': 'gpu:1', 'view_61': 'gpu:1', 'view_62': 'gpu:1', 'view_63': 'gpu:1', 'view_64': 'gpu:1', 'view_65': 'gpu:1', 'view_66': 'gpu:1', 'view_67': 'gpu:1', 'view_68': 'gpu:1', 'view_69': 'gpu:1', 'view_7': 'gpu:2', 'view_70': 'gpu:1', 'view_71': 'gpu:1', 'view_72': 'gpu:1', 'view_73': 'gpu:1', 'view_74': 'gpu:1', 'view_75': 'gpu:1', 'view_76': 'gpu:1', 'view_77': 'gpu:1', 'view_78': 'gpu:1', 'view_79': 'gpu:1', 'view_8': 'gpu:2', 'view_80': 'gpu:1', 'view_81': 'gpu:1', 'view_82': 'gpu:1', 'view_83': 'gpu:1', 'view_84': 'gpu:1', 'view_85': 'gpu:1', 'view_86': 'gpu:1', 'view_87': 'gpu:1', 'view_88': 'gpu:1', 'view_89': 'gpu:1', 'view_9': 'gpu:2', 'view_90': 'gpu:1', 'view_91': 'gpu:1', 'view_92': 'gpu:1', 'view_93': 'gpu:1', 'view_94': 'gpu:1', 'view_95': 'gpu:1', 'view_96': 'gpu:1', 'view_97': 'gpu:1', 'view_98': 'gpu:1', 'view_99': 'gpu:1', 'where': 'gpu:2', 'where_1': 'gpu:2', 'where_10': 'gpu:0', 'where_11': 'gpu:0', 'where_2': 'gpu:2', 'where_3': 'gpu:2', 'where_4': 'gpu:1', 'where_5': 'gpu:1', 'where_6': 'gpu:1', 'where_7': 'gpu:1', 'where_8': 'gpu:0', 'where_9': 'gpu:0', 'wpe': 'gpu:3', 'wte': 'gpu:3'}
+device_map[gdps]:
+{'add': 'gpu:3', 'add_1': 'gpu:3', 'add_10': 'gpu:3', 'add_100': 'gpu:3', 'add_101': 'gpu:3', 'add_102': 'gpu:3', 'add_103': 'gpu:3', 'add_104': 'gpu:3', 'add_105': 'gpu:3', 'add_106': 'gpu:3', 'add_107': 'gpu:3', 'add_108': 'gpu:3', 'add_109': 'gpu:3', 'add_11': 'gpu:3', 'add_110': 'gpu:3', 'add_111': 'gpu:3', 'add_112': 'gpu:3', 'add_113': 'gpu:3', 'add_114': 'gpu:3', 'add_115': 'gpu:3', 'add_116': 'gpu:3', 'add_117': 'gpu:3', 'add_118': 'gpu:3', 'add_119': 'gpu:3', 'add_12': 'gpu:3', 'add_120': 'gpu:3', 'add_121': 'gpu:3', 'add_122': 'gpu:3', 'add_123': 'gpu:3', 'add_124': 'gpu:3', 'add_125': 'gpu:3', 'add_126': 'gpu:3', 'add_127': 'gpu:3', 'add_128': 'gpu:3', 'add_129': 'gpu:3', 'add_13': 'gpu:3', 'add_130': 'gpu:3', 'add_131': 'gpu:3', 'add_132': 'gpu:3', 'add_133': 'gpu:3', 'add_134': 'gpu:3', 'add_135': 'gpu:3', 'add_136': 'gpu:3', 'add_137': 'gpu:3', 'add_138': 'gpu:3', 'add_139': 'gpu:3', 'add_14': 'gpu:3', 'add_140': 'gpu:3', 'add_141': 'gpu:3', 'add_142': 'gpu:3', 'add_143': 'gpu:3', 'add_144': 'gpu:3', 'add_145': 'gpu:3', 'add_146': 'gpu:3', 'add_15': 'gpu:3', 'add_16': 'gpu:3', 'add_17': 'gpu:3', 'add_18': 'gpu:3', 'add_19': 'gpu:3', 'add_2': 'gpu:3', 'add_20': 'gpu:3', 'add_21': 'gpu:3', 'add_22': 'gpu:3', 'add_23': 'gpu:3', 'add_24': 'gpu:3', 'add_25': 'gpu:3', 'add_26': 'gpu:3', 'add_27': 'gpu:3', 'add_28': 'gpu:3', 'add_29': 'gpu:3', 'add_3': 'gpu:3', 'add_30': 'gpu:3', 'add_31': 'gpu:3', 'add_32': 'gpu:3', 'add_33': 'gpu:3', 'add_34': 'gpu:3', 'add_35': 'gpu:3', 'add_36': 'gpu:3', 'add_37': 'gpu:3', 'add_38': 'gpu:3', 'add_39': 'gpu:3', 'add_4': 'gpu:3', 'add_40': 'gpu:3', 'add_41': 'gpu:3', 'add_42': 'gpu:3', 'add_43': 'gpu:3', 'add_44': 'gpu:3', 'add_45': 'gpu:3', 'add_46': 'gpu:3', 'add_47': 'gpu:3', 'add_48': 'gpu:3', 'add_49': 'gpu:3', 'add_5': 'gpu:3', 'add_50': 'gpu:3', 'add_51': 'gpu:3', 'add_52': 'gpu:3', 'add_53': 'gpu:3', 'add_54': 'gpu:3', 'add_55': 'gpu:3', 'add_56': 'gpu:3', 'add_57': 'gpu:3', 'add_58': 'gpu:3', 'add_59': 'gpu:3', 'add_6': 'gpu:3', 'add_60': 'gpu:3', 'add_61': 'gpu:3', 'add_62': 'gpu:3', 'add_63': 'gpu:3', 'add_64': 'gpu:3', 'add_65': 'gpu:3', 'add_66': 'gpu:3', 'add_67': 'gpu:3', 'add_68': 'gpu:3', 'add_69': 'gpu:3', 'add_7': 'gpu:3', 'add_70': 'gpu:3', 'add_71': 'gpu:3', 'add_72': 'gpu:3', 'add_73': 'gpu:3', 'add_74': 'gpu:3', 'add_75': 'gpu:3', 'add_76': 'gpu:3', 'add_77': 'gpu:3', 'add_78': 'gpu:3', 'add_79': 'gpu:3', 'add_8': 'gpu:3', 'add_80': 'gpu:3', 'add_81': 'gpu:3', 'add_82': 'gpu:3', 'add_83': 'gpu:3', 'add_84': 'gpu:3', 'add_85': 'gpu:3', 'add_86': 'gpu:3', 'add_87': 'gpu:3', 'add_88': 'gpu:3', 'add_89': 'gpu:3', 'add_9': 'gpu:3', 'add_90': 'gpu:3', 'add_91': 'gpu:3', 'add_92': 'gpu:3', 'add_93': 'gpu:3', 'add_94': 'gpu:3', 'add_95': 'gpu:3', 'add_96': 'gpu:3', 'add_97': 'gpu:3', 'add_98': 'gpu:3', 'add_99': 'gpu:3', 'addmm': 'gpu:3', 'addmm_1': 'gpu:3', 'addmm_10': 'gpu:3', 'addmm_11': 'gpu:3', 'addmm_12': 'gpu:3', 'addmm_13': 'gpu:3', 'addmm_14': 'gpu:3', 'addmm_15': 'gpu:3', 'addmm_16': 'gpu:3', 'addmm_17': 'gpu:3', 'addmm_18': 'gpu:3', 'addmm_19': 'gpu:3', 'addmm_2': 'gpu:3', 'addmm_20': 'gpu:3', 'addmm_21': 'gpu:3', 'addmm_22': 'gpu:3', 'addmm_23': 'gpu:3', 'addmm_24': 'gpu:3', 'addmm_25': 'gpu:3', 'addmm_26': 'gpu:3', 'addmm_27': 'gpu:3', 'addmm_28': 'gpu:3', 'addmm_29': 'gpu:3', 'addmm_3': 'gpu:3', 'addmm_30': 'gpu:3', 'addmm_31': 'gpu:3', 'addmm_32': 'gpu:3', 'addmm_33': 'gpu:3', 'addmm_34': 'gpu:3', 'addmm_35': 'gpu:3', 'addmm_36': 'gpu:3', 'addmm_37': 'gpu:3', 'addmm_38': 'gpu:3', 'addmm_39': 'gpu:3', 'addmm_4': 'gpu:3', 'addmm_40': 'gpu:3', 'addmm_41': 'gpu:3', 'addmm_42': 'gpu:3', 'addmm_43': 'gpu:3', 'addmm_44': 'gpu:3', 'addmm_45': 'gpu:3', 'addmm_46': 'gpu:3', 'addmm_47': 'gpu:3', 'addmm_5': 'gpu:3', 'addmm_6': 'gpu:3', 'addmm_7': 'gpu:3', 'addmm_8': 'gpu:3', 'addmm_9': 'gpu:3', 'arange': 'gpu:3', 'contiguous': 'gpu:3', 'contiguous_1': 'gpu:3', 'contiguous_10': 'gpu:3', 'contiguous_11': 'gpu:3', 'contiguous_2': 'gpu:3', 'contiguous_3': 'gpu:3', 'contiguous_4': 'gpu:3', 'contiguous_5': 'gpu:3', 'contiguous_6': 'gpu:3', 'contiguous_7': 'gpu:3', 'contiguous_8': 'gpu:3', 'contiguous_9': 'gpu:3', 'drop': 'gpu:3', 'finfo': 'gpu:3', 'finfo_1': 'gpu:3', 'finfo_10': 'gpu:3', 'finfo_11': 'gpu:3', 'finfo_2': 'gpu:3', 'finfo_3': 'gpu:3', 'finfo_4': 'gpu:3', 'finfo_5': 'gpu:3', 'finfo_6': 'gpu:3', 'finfo_7': 'gpu:3', 'finfo_8': 'gpu:3', 'finfo_9': 'gpu:3', 'full': 'gpu:3', 'full_1': 'gpu:3', 'full_10': 'gpu:3', 'full_11': 'gpu:3', 'full_12': 'gpu:3', 'full_13': 'gpu:3', 'full_14': 'gpu:3', 'full_15': 'gpu:3', 'full_16': 'gpu:3', 'full_17': 'gpu:3', 'full_18': 'gpu:3', 'full_19': 'gpu:3', 'full_2': 'gpu:3', 'full_20': 'gpu:3', 'full_21': 'gpu:3', 'full_22': 'gpu:3', 'full_23': 'gpu:3', 'full_3': 'gpu:3', 'full_4': 'gpu:3', 'full_5': 'gpu:3', 'full_6': 'gpu:3', 'full_7': 'gpu:3', 'full_8': 'gpu:3', 'full_9': 'gpu:3', 'getattr_1': 'gpu:3', 'getattr_10': 'gpu:3', 'getattr_11': 'gpu:3', 'getattr_12': 'gpu:3', 'getattr_13': 'gpu:3', 'getattr_14': 'gpu:3', 'getattr_15': 'gpu:3', 'getattr_16': 'gpu:3', 'getattr_17': 'gpu:3', 'getattr_18': 'gpu:3', 'getattr_19': 'gpu:3', 'getattr_2': 'gpu:3', 'getattr_20': 'gpu:3', 'getattr_21': 'gpu:3', 'getattr_22': 'gpu:3', 'getattr_23': 'gpu:3', 'getattr_24': 'gpu:3', 'getattr_25': 'gpu:3', 'getattr_26': 'gpu:3', 'getattr_27': 'gpu:3', 'getattr_28': 'gpu:3', 'getattr_29': 'gpu:3', 'getattr_3': 'gpu:3', 'getattr_30': 'gpu:3', 'getattr_31': 'gpu:3', 'getattr_32': 'gpu:3', 'getattr_33': 'gpu:3', 'getattr_34': 'gpu:3', 'getattr_35': 'gpu:3', 'getattr_36': 'gpu:3', 'getattr_37': 'gpu:3', 'getattr_38': 'gpu:3', 'getattr_39': 'gpu:3', 'getattr_4': 'gpu:3', 'getattr_40': 'gpu:3', 'getattr_41': 'gpu:3', 'getattr_42': 'gpu:3', 'getattr_43': 'gpu:3', 'getattr_44': 'gpu:3', 'getattr_45': 'gpu:3', 'getattr_46': 'gpu:3', 'getattr_47': 'gpu:3', 'getattr_48': 'gpu:3', 'getattr_49': 'gpu:3', 'getattr_5': 'gpu:3', 'getattr_50': 'gpu:3', 'getattr_51': 'gpu:3', 'getattr_52': 'gpu:3', 'getattr_53': 'gpu:3', 'getattr_54': 'gpu:3', 'getattr_55': 'gpu:3', 'getattr_56': 'gpu:3', 'getattr_57': 'gpu:3', 'getattr_58': 'gpu:3', 'getattr_59': 'gpu:3', 'getattr_6': 'gpu:3', 'getattr_60': 'gpu:3', 'getattr_61': 'gpu:3', 'getattr_62': 'gpu:3', 'getattr_63': 'gpu:3', 'getattr_64': 'gpu:3', 'getattr_65': 'gpu:3', 'getattr_66': 'gpu:3', 'getattr_67': 'gpu:3', 'getattr_68': 'gpu:3', 'getattr_69': 'gpu:3', 'getattr_7': 'gpu:3', 'getattr_70': 'gpu:3', 'getattr_71': 'gpu:3', 'getattr_72': 'gpu:3', 'getattr_73': 'gpu:3', 'getattr_74': 'gpu:3', 'getattr_75': 'gpu:3', 'getattr_76': 'gpu:3', 'getattr_77': 'gpu:3', 'getattr_78': 'gpu:3', 'getattr_79': 'gpu:3', 'getattr_8': 'gpu:3', 'getattr_80': 'gpu:3', 'getattr_81': 'gpu:3', 'getattr_82': 'gpu:3', 'getattr_83': 'gpu:3', 'getattr_84': 'gpu:3', 'getattr_85': 'gpu:3', 'getattr_86': 'gpu:3', 'getattr_87': 'gpu:3', 'getattr_88': 'gpu:3', 'getattr_89': 'gpu:3', 'getattr_9': 'gpu:3', 'getattr_90': 'gpu:3', 'getattr_91': 'gpu:3', 'getattr_92': 'gpu:3', 'getattr_93': 'gpu:3', 'getattr_94': 'gpu:3', 'getattr_95': 'gpu:3', 'getattr_96': 'gpu:3', 'getattr_97': 'gpu:3', 'getitem': 'gpu:3', 'getitem_1': 'gpu:3', 'getitem_10': 'gpu:3', 'getitem_100': 'gpu:3', 'getitem_101': 'gpu:3', 'getitem_102': 'gpu:3', 'getitem_103': 'gpu:3', 'getitem_104': 'gpu:3', 'getitem_105': 'gpu:3', 'getitem_106': 'gpu:3', 'getitem_107': 'gpu:3', 'getitem_108': 'gpu:3', 'getitem_109': 'gpu:3', 'getitem_11': 'gpu:3', 'getitem_110': 'gpu:3', 'getitem_111': 'gpu:3', 'getitem_112': 'gpu:3', 'getitem_113': 'gpu:3', 'getitem_114': 'gpu:3', 'getitem_115': 'gpu:3', 'getitem_116': 'gpu:3', 'getitem_117': 'gpu:3', 'getitem_118': 'gpu:3', 'getitem_119': 'gpu:3', 'getitem_12': 'gpu:3', 'getitem_120': 'gpu:3', 'getitem_121': 'gpu:3', 'getitem_122': 'gpu:3', 'getitem_123': 'gpu:3', 'getitem_124': 'gpu:3', 'getitem_125': 'gpu:3', 'getitem_126': 'gpu:3', 'getitem_127': 'gpu:3', 'getitem_128': 'gpu:3', 'getitem_129': 'gpu:3', 'getitem_13': 'gpu:3', 'getitem_130': 'gpu:3', 'getitem_131': 'gpu:3', 'getitem_132': 'gpu:3', 'getitem_133': 'gpu:3', 'getitem_134': 'gpu:3', 'getitem_135': 'gpu:3', 'getitem_136': 'gpu:3', 'getitem_137': 'gpu:3', 'getitem_138': 'gpu:3', 'getitem_139': 'gpu:3', 'getitem_14': 'gpu:3', 'getitem_140': 'gpu:3', 'getitem_141': 'gpu:3', 'getitem_142': 'gpu:3', 'getitem_143': 'gpu:3', 'getitem_144': 'gpu:3', 'getitem_145': 'gpu:3', 'getitem_146': 'gpu:3', 'getitem_147': 'gpu:3', 'getitem_15': 'gpu:3', 'getitem_16': 'gpu:3', 'getitem_17': 'gpu:3', 'getitem_18': 'gpu:3', 'getitem_19': 'gpu:3', 'getitem_2': 'gpu:3', 'getitem_20': 'gpu:3', 'getitem_21': 'gpu:3', 'getitem_22': 'gpu:3', 'getitem_23': 'gpu:3', 'getitem_24': 'gpu:3', 'getitem_25': 'gpu:3', 'getitem_26': 'gpu:3', 'getitem_27': 'gpu:3', 'getitem_28': 'gpu:3', 'getitem_29': 'gpu:3', 'getitem_3': 'gpu:3', 'getitem_30': 'gpu:3', 'getitem_31': 'gpu:3', 'getitem_32': 'gpu:3', 'getitem_33': 'gpu:3', 'getitem_34': 'gpu:3', 'getitem_35': 'gpu:3', 'getitem_36': 'gpu:3', 'getitem_37': 'gpu:3', 'getitem_38': 'gpu:3', 'getitem_39': 'gpu:3', 'getitem_4': 'gpu:3', 'getitem_40': 'gpu:3', 'getitem_41': 'gpu:3', 'getitem_42': 'gpu:3', 'getitem_43': 'gpu:3', 'getitem_44': 'gpu:3', 'getitem_45': 'gpu:3', 'getitem_46': 'gpu:3', 'getitem_47': 'gpu:3', 'getitem_48': 'gpu:3', 'getitem_49': 'gpu:3', 'getitem_5': 'gpu:3', 'getitem_50': 'gpu:3', 'getitem_51': 'gpu:3', 'getitem_52': 'gpu:3', 'getitem_53': 'gpu:3', 'getitem_54': 'gpu:3', 'getitem_55': 'gpu:3', 'getitem_56': 'gpu:3', 'getitem_57': 'gpu:3', 'getitem_58': 'gpu:3', 'getitem_59': 'gpu:3', 'getitem_6': 'gpu:3', 'getitem_60': 'gpu:3', 'getitem_61': 'gpu:3', 'getitem_62': 'gpu:3', 'getitem_63': 'gpu:3', 'getitem_64': 'gpu:3', 'getitem_65': 'gpu:3', 'getitem_66': 'gpu:3', 'getitem_67': 'gpu:3', 'getitem_68': 'gpu:3', 'getitem_69': 'gpu:3', 'getitem_7': 'gpu:3', 'getitem_70': 'gpu:3', 'getitem_71': 'gpu:3', 'getitem_72': 'gpu:3', 'getitem_73': 'gpu:3', 'getitem_74': 'gpu:3', 'getitem_75': 'gpu:3', 'getitem_76': 'gpu:3', 'getitem_77': 'gpu:3', 'getitem_78': 'gpu:3', 'getitem_79': 'gpu:3', 'getitem_8': 'gpu:3', 'getitem_80': 'gpu:3', 'getitem_81': 'gpu:3', 'getitem_82': 'gpu:3', 'getitem_83': 'gpu:3', 'getitem_84': 'gpu:3', 'getitem_85': 'gpu:3', 'getitem_86': 'gpu:3', 'getitem_87': 'gpu:3', 'getitem_88': 'gpu:3', 'getitem_89': 'gpu:3', 'getitem_9': 'gpu:3', 'getitem_90': 'gpu:3', 'getitem_91': 'gpu:3', 'getitem_92': 'gpu:3', 'getitem_93': 'gpu:3', 'getitem_94': 'gpu:3', 'getitem_95': 'gpu:3', 'getitem_96': 'gpu:3', 'getitem_97': 'gpu:3', 'getitem_98': 'gpu:3', 'getitem_99': 'gpu:3', 'h_0_attn_attn_dropout': 'gpu:3', 'h_0_attn_bias': 'gpu:3', 'h_0_attn_c_attn_bias': 'gpu:3', 'h_0_attn_c_attn_weight': 'gpu:3', 'h_0_attn_c_proj_bias': 'gpu:3', 'h_0_attn_c_proj_weight': 'gpu:3', 'h_0_attn_resid_dropout': 'gpu:3', 'h_0_ln_1': 'gpu:3', 'h_0_ln_2': 'gpu:3', 'h_0_mlp_c_fc_bias': 'gpu:3', 'h_0_mlp_c_fc_weight': 'gpu:3', 'h_0_mlp_c_proj_bias': 'gpu:3', 'h_0_mlp_c_proj_weight': 'gpu:3', 'h_0_mlp_dropout': 'gpu:3', 'h_10_attn_attn_dropout': 'gpu:3', 'h_10_attn_bias': 'gpu:3', 'h_10_attn_c_attn_bias': 'gpu:3', 'h_10_attn_c_attn_weight': 'gpu:3', 'h_10_attn_c_proj_bias': 'gpu:3', 'h_10_attn_c_proj_weight': 'gpu:3', 'h_10_attn_resid_dropout': 'gpu:3', 'h_10_ln_1': 'gpu:3', 'h_10_ln_2': 'gpu:3', 'h_10_mlp_c_fc_bias': 'gpu:3', 'h_10_mlp_c_fc_weight': 'gpu:3', 'h_10_mlp_c_proj_bias': 'gpu:3', 'h_10_mlp_c_proj_weight': 'gpu:3', 'h_10_mlp_dropout': 'gpu:3', 'h_11_attn_attn_dropout': 'gpu:3', 'h_11_attn_bias': 'gpu:3', 'h_11_attn_c_attn_bias': 'gpu:3', 'h_11_attn_c_attn_weight': 'gpu:3', 'h_11_attn_c_proj_bias': 'gpu:3', 'h_11_attn_c_proj_weight': 'gpu:3', 'h_11_attn_resid_dropout': 'gpu:3', 'h_11_ln_1': 'gpu:3', 'h_11_ln_2': 'gpu:3', 'h_11_mlp_c_fc_bias': 'gpu:3', 'h_11_mlp_c_fc_weight': 'gpu:3', 'h_11_mlp_c_proj_bias': 'gpu:3', 'h_11_mlp_c_proj_weight': 'gpu:3', 'h_11_mlp_dropout': 'gpu:3', 'h_1_attn_attn_dropout': 'gpu:3', 'h_1_attn_bias': 'gpu:3', 'h_1_attn_c_attn_bias': 'gpu:3', 'h_1_attn_c_attn_weight': 'gpu:3', 'h_1_attn_c_proj_bias': 'gpu:3', 'h_1_attn_c_proj_weight': 'gpu:3', 'h_1_attn_resid_dropout': 'gpu:3', 'h_1_ln_1': 'gpu:3', 'h_1_ln_2': 'gpu:3', 'h_1_mlp_c_fc_bias': 'gpu:3', 'h_1_mlp_c_fc_weight': 'gpu:3', 'h_1_mlp_c_proj_bias': 'gpu:3', 'h_1_mlp_c_proj_weight': 'gpu:3', 'h_1_mlp_dropout': 'gpu:3', 'h_2_attn_attn_dropout': 'gpu:3', 'h_2_attn_bias': 'gpu:3', 'h_2_attn_c_attn_bias': 'gpu:3', 'h_2_attn_c_attn_weight': 'gpu:3', 'h_2_attn_c_proj_bias': 'gpu:3', 'h_2_attn_c_proj_weight': 'gpu:3', 'h_2_attn_resid_dropout': 'gpu:3', 'h_2_ln_1': 'gpu:3', 'h_2_ln_2': 'gpu:3', 'h_2_mlp_c_fc_bias': 'gpu:3', 'h_2_mlp_c_fc_weight': 'gpu:3', 'h_2_mlp_c_proj_bias': 'gpu:3', 'h_2_mlp_c_proj_weight': 'gpu:3', 'h_2_mlp_dropout': 'gpu:3', 'h_3_attn_attn_dropout': 'gpu:3', 'h_3_attn_bias': 'gpu:3', 'h_3_attn_c_attn_bias': 'gpu:3', 'h_3_attn_c_attn_weight': 'gpu:3', 'h_3_attn_c_proj_bias': 'gpu:3', 'h_3_attn_c_proj_weight': 'gpu:3', 'h_3_attn_resid_dropout': 'gpu:3', 'h_3_ln_1': 'gpu:3', 'h_3_ln_2': 'gpu:3', 'h_3_mlp_c_fc_bias': 'gpu:3', 'h_3_mlp_c_fc_weight': 'gpu:3', 'h_3_mlp_c_proj_bias': 'gpu:3', 'h_3_mlp_c_proj_weight': 'gpu:3', 'h_3_mlp_dropout': 'gpu:3', 'h_4_attn_attn_dropout': 'gpu:3', 'h_4_attn_bias': 'gpu:3', 'h_4_attn_c_attn_bias': 'gpu:3', 'h_4_attn_c_attn_weight': 'gpu:3', 'h_4_attn_c_proj_bias': 'gpu:3', 'h_4_attn_c_proj_weight': 'gpu:3', 'h_4_attn_resid_dropout': 'gpu:3', 'h_4_ln_1': 'gpu:3', 'h_4_ln_2': 'gpu:3', 'h_4_mlp_c_fc_bias': 'gpu:3', 'h_4_mlp_c_fc_weight': 'gpu:3', 'h_4_mlp_c_proj_bias': 'gpu:3', 'h_4_mlp_c_proj_weight': 'gpu:3', 'h_4_mlp_dropout': 'gpu:3', 'h_5_attn_attn_dropout': 'gpu:3', 'h_5_attn_bias': 'gpu:3', 'h_5_attn_c_attn_bias': 'gpu:3', 'h_5_attn_c_attn_weight': 'gpu:3', 'h_5_attn_c_proj_bias': 'gpu:3', 'h_5_attn_c_proj_weight': 'gpu:3', 'h_5_attn_resid_dropout': 'gpu:3', 'h_5_ln_1': 'gpu:3', 'h_5_ln_2': 'gpu:3', 'h_5_mlp_c_fc_bias': 'gpu:3', 'h_5_mlp_c_fc_weight': 'gpu:3', 'h_5_mlp_c_proj_bias': 'gpu:3', 'h_5_mlp_c_proj_weight': 'gpu:3', 'h_5_mlp_dropout': 'gpu:3', 'h_6_attn_attn_dropout': 'gpu:3', 'h_6_attn_bias': 'gpu:3', 'h_6_attn_c_attn_bias': 'gpu:3', 'h_6_attn_c_attn_weight': 'gpu:3', 'h_6_attn_c_proj_bias': 'gpu:3', 'h_6_attn_c_proj_weight': 'gpu:3', 'h_6_attn_resid_dropout': 'gpu:3', 'h_6_ln_1': 'gpu:3', 'h_6_ln_2': 'gpu:3', 'h_6_mlp_c_fc_bias': 'gpu:3', 'h_6_mlp_c_fc_weight': 'gpu:3', 'h_6_mlp_c_proj_bias': 'gpu:3', 'h_6_mlp_c_proj_weight': 'gpu:3', 'h_6_mlp_dropout': 'gpu:3', 'h_7_attn_attn_dropout': 'gpu:3', 'h_7_attn_bias': 'gpu:3', 'h_7_attn_c_attn_bias': 'gpu:3', 'h_7_attn_c_attn_weight': 'gpu:3', 'h_7_attn_c_proj_bias': 'gpu:3', 'h_7_attn_c_proj_weight': 'gpu:3', 'h_7_attn_resid_dropout': 'gpu:3', 'h_7_ln_1': 'gpu:3', 'h_7_ln_2': 'gpu:3', 'h_7_mlp_c_fc_bias': 'gpu:3', 'h_7_mlp_c_fc_weight': 'gpu:3', 'h_7_mlp_c_proj_bias': 'gpu:3', 'h_7_mlp_c_proj_weight': 'gpu:3', 'h_7_mlp_dropout': 'gpu:3', 'h_8_attn_attn_dropout': 'gpu:3', 'h_8_attn_bias': 'gpu:3', 'h_8_attn_c_attn_bias': 'gpu:3', 'h_8_attn_c_attn_weight': 'gpu:3', 'h_8_attn_c_proj_bias': 'gpu:3', 'h_8_attn_c_proj_weight': 'gpu:3', 'h_8_attn_resid_dropout': 'gpu:3', 'h_8_ln_1': 'gpu:3', 'h_8_ln_2': 'gpu:3', 'h_8_mlp_c_fc_bias': 'gpu:3', 'h_8_mlp_c_fc_weight': 'gpu:3', 'h_8_mlp_c_proj_bias': 'gpu:3', 'h_8_mlp_c_proj_weight': 'gpu:3', 'h_8_mlp_dropout': 'gpu:3', 'h_9_attn_attn_dropout': 'gpu:3', 'h_9_attn_bias': 'gpu:3', 'h_9_attn_c_attn_bias': 'gpu:3', 'h_9_attn_c_attn_weight': 'gpu:3', 'h_9_attn_c_proj_bias': 'gpu:3', 'h_9_attn_c_proj_weight': 'gpu:3', 'h_9_attn_resid_dropout': 'gpu:3', 'h_9_ln_1': 'gpu:3', 'h_9_ln_2': 'gpu:3', 'h_9_mlp_c_fc_bias': 'gpu:3', 'h_9_mlp_c_fc_weight': 'gpu:3', 'h_9_mlp_c_proj_bias': 'gpu:3', 'h_9_mlp_c_proj_weight': 'gpu:3', 'h_9_mlp_dropout': 'gpu:3', 'input_ids': 'gpu:3', 'ln_f': 'gpu:3', 'matmul': 'gpu:3', 'matmul_1': 'gpu:3', 'matmul_10': 'gpu:3', 'matmul_11': 'gpu:3', 'matmul_12': 'gpu:3', 'matmul_13': 'gpu:3', 'matmul_14': 'gpu:3', 'matmul_15': 'gpu:3', 'matmul_16': 'gpu:3', 'matmul_17': 'gpu:3', 'matmul_18': 'gpu:3', 'matmul_19': 'gpu:3', 'matmul_2': 'gpu:3', 'matmul_20': 'gpu:3', 'matmul_21': 'gpu:3', 'matmul_22': 'gpu:3', 'matmul_23': 'gpu:3', 'matmul_3': 'gpu:3', 'matmul_4': 'gpu:3', 'matmul_5': 'gpu:3', 'matmul_6': 'gpu:3', 'matmul_7': 'gpu:3', 'matmul_8': 'gpu:3', 'matmul_9': 'gpu:3', 'mul': 'gpu:3', 'mul_1': 'gpu:3', 'mul_10': 'gpu:3', 'mul_11': 'gpu:3', 'mul_12': 'gpu:3', 'mul_13': 'gpu:3', 'mul_14': 'gpu:3', 'mul_15': 'gpu:3', 'mul_16': 'gpu:3', 'mul_17': 'gpu:3', 'mul_18': 'gpu:3', 'mul_19': 'gpu:3', 'mul_2': 'gpu:3', 'mul_20': 'gpu:3', 'mul_21': 'gpu:3', 'mul_22': 'gpu:3', 'mul_23': 'gpu:3', 'mul_24': 'gpu:3', 'mul_25': 'gpu:3', 'mul_26': 'gpu:3', 'mul_27': 'gpu:3', 'mul_28': 'gpu:3', 'mul_29': 'gpu:3', 'mul_3': 'gpu:3', 'mul_30': 'gpu:3', 'mul_31': 'gpu:3', 'mul_32': 'gpu:3', 'mul_33': 'gpu:3', 'mul_34': 'gpu:3', 'mul_35': 'gpu:3', 'mul_36': 'gpu:3', 'mul_37': 'gpu:3', 'mul_38': 'gpu:3', 'mul_39': 'gpu:3', 'mul_4': 'gpu:3', 'mul_40': 'gpu:3', 'mul_41': 'gpu:3', 'mul_42': 'gpu:3', 'mul_43': 'gpu:3', 'mul_44': 'gpu:3', 'mul_45': 'gpu:3', 'mul_46': 'gpu:3', 'mul_47': 'gpu:3', 'mul_5': 'gpu:3', 'mul_6': 'gpu:3', 'mul_7': 'gpu:3', 'mul_8': 'gpu:3', 'mul_9': 'gpu:3', 'output': 'gpu:3', 'permute': 'gpu:3', 'permute_1': 'gpu:3', 'permute_10': 'gpu:3', 'permute_11': 'gpu:3', 'permute_12': 'gpu:3', 'permute_13': 'gpu:3', 'permute_14': 'gpu:3', 'permute_15': 'gpu:3', 'permute_16': 'gpu:3', 'permute_17': 'gpu:3', 'permute_18': 'gpu:3', 'permute_19': 'gpu:3', 'permute_2': 'gpu:3', 'permute_20': 'gpu:3', 'permute_21': 'gpu:3', 'permute_22': 'gpu:3', 'permute_23': 'gpu:3', 'permute_24': 'gpu:3', 'permute_25': 'gpu:3', 'permute_26': 'gpu:3', 'permute_27': 'gpu:3', 'permute_28': 'gpu:3', 'permute_29': 'gpu:3', 'permute_3': 'gpu:3', 'permute_30': 'gpu:3', 'permute_31': 'gpu:3', 'permute_32': 'gpu:3', 'permute_33': 'gpu:3', 'permute_34': 'gpu:3', 'permute_35': 'gpu:3', 'permute_36': 'gpu:3', 'permute_37': 'gpu:3', 'permute_38': 'gpu:3', 'permute_39': 'gpu:3', 'permute_4': 'gpu:3', 'permute_40': 'gpu:3', 'permute_41': 'gpu:3', 'permute_42': 'gpu:3', 'permute_43': 'gpu:3', 'permute_44': 'gpu:3', 'permute_45': 'gpu:3', 'permute_46': 'gpu:3', 'permute_47': 'gpu:3', 'permute_5': 'gpu:3', 'permute_6': 'gpu:3', 'permute_7': 'gpu:3', 'permute_8': 'gpu:3', 'permute_9': 'gpu:3', 'pow_1': 'gpu:3', 'pow_10': 'gpu:3', 'pow_11': 'gpu:3', 'pow_12': 'gpu:3', 'pow_13': 'gpu:3', 'pow_14': 'gpu:3', 'pow_15': 'gpu:3', 'pow_16': 'gpu:3', 'pow_17': 'gpu:3', 'pow_18': 'gpu:3', 'pow_19': 'gpu:3', 'pow_2': 'gpu:3', 'pow_20': 'gpu:3', 'pow_21': 'gpu:3', 'pow_22': 'gpu:3', 'pow_23': 'gpu:3', 'pow_24': 'gpu:3', 'pow_3': 'gpu:3', 'pow_4': 'gpu:3', 'pow_5': 'gpu:3', 'pow_6': 'gpu:3', 'pow_7': 'gpu:3', 'pow_8': 'gpu:3', 'pow_9': 'gpu:3', 'size': 'gpu:3', 'size_1': 'gpu:3', 'size_10': 'gpu:3', 'size_100': 'gpu:3', 'size_101': 'gpu:3', 'size_102': 'gpu:3', 'size_103': 'gpu:3', 'size_104': 'gpu:3', 'size_105': 'gpu:3', 'size_106': 'gpu:3', 'size_107': 'gpu:3', 'size_108': 'gpu:3', 'size_109': 'gpu:3', 'size_11': 'gpu:3', 'size_110': 'gpu:3', 'size_111': 'gpu:3', 'size_112': 'gpu:3', 'size_113': 'gpu:3', 'size_114': 'gpu:3', 'size_115': 'gpu:3', 'size_116': 'gpu:3', 'size_117': 'gpu:3', 'size_118': 'gpu:3', 'size_119': 'gpu:3', 'size_12': 'gpu:3', 'size_120': 'gpu:3', 'size_121': 'gpu:3', 'size_122': 'gpu:3', 'size_123': 'gpu:3', 'size_124': 'gpu:3', 'size_125': 'gpu:3', 'size_126': 'gpu:3', 'size_127': 'gpu:3', 'size_128': 'gpu:3', 'size_129': 'gpu:3', 'size_13': 'gpu:3', 'size_130': 'gpu:3', 'size_131': 'gpu:3', 'size_132': 'gpu:3', 'size_133': 'gpu:3', 'size_134': 'gpu:3', 'size_135': 'gpu:3', 'size_136': 'gpu:3', 'size_137': 'gpu:3', 'size_138': 'gpu:3', 'size_139': 'gpu:3', 'size_14': 'gpu:3', 'size_140': 'gpu:3', 'size_141': 'gpu:3', 'size_142': 'gpu:3', 'size_143': 'gpu:3', 'size_144': 'gpu:3', 'size_145': 'gpu:3', 'size_146': 'gpu:3', 'size_147': 'gpu:3', 'size_148': 'gpu:3', 'size_149': 'gpu:3', 'size_15': 'gpu:3', 'size_150': 'gpu:3', 'size_151': 'gpu:3', 'size_152': 'gpu:3', 'size_153': 'gpu:3', 'size_154': 'gpu:3', 'size_155': 'gpu:3', 'size_156': 'gpu:3', 'size_157': 'gpu:3', 'size_158': 'gpu:3', 'size_159': 'gpu:3', 'size_16': 'gpu:3', 'size_160': 'gpu:3', 'size_161': 'gpu:3', 'size_162': 'gpu:3', 'size_163': 'gpu:3', 'size_164': 'gpu:3', 'size_165': 'gpu:3', 'size_166': 'gpu:3', 'size_167': 'gpu:3', 'size_168': 'gpu:3', 'size_169': 'gpu:3', 'size_17': 'gpu:3', 'size_170': 'gpu:3', 'size_171': 'gpu:3', 'size_172': 'gpu:3', 'size_173': 'gpu:3', 'size_174': 'gpu:3', 'size_175': 'gpu:3', 'size_176': 'gpu:3', 'size_177': 'gpu:3', 'size_178': 'gpu:3', 'size_179': 'gpu:3', 'size_18': 'gpu:3', 'size_180': 'gpu:3', 'size_181': 'gpu:3', 'size_182': 'gpu:3', 'size_19': 'gpu:3', 'size_2': 'gpu:3', 'size_20': 'gpu:3', 'size_21': 'gpu:3', 'size_22': 'gpu:3', 'size_23': 'gpu:3', 'size_24': 'gpu:3', 'size_25': 'gpu:3', 'size_26': 'gpu:3', 'size_27': 'gpu:3', 'size_28': 'gpu:3', 'size_29': 'gpu:3', 'size_3': 'gpu:3', 'size_30': 'gpu:3', 'size_31': 'gpu:3', 'size_32': 'gpu:3', 'size_33': 'gpu:3', 'size_34': 'gpu:3', 'size_35': 'gpu:3', 'size_36': 'gpu:3', 'size_37': 'gpu:3', 'size_38': 'gpu:3', 'size_39': 'gpu:3', 'size_4': 'gpu:3', 'size_40': 'gpu:3', 'size_41': 'gpu:3', 'size_42': 'gpu:3', 'size_43': 'gpu:3', 'size_44': 'gpu:3', 'size_45': 'gpu:3', 'size_46': 'gpu:3', 'size_47': 'gpu:3', 'size_48': 'gpu:3', 'size_49': 'gpu:3', 'size_5': 'gpu:3', 'size_50': 'gpu:3', 'size_51': 'gpu:3', 'size_52': 'gpu:3', 'size_53': 'gpu:3', 'size_54': 'gpu:3', 'size_55': 'gpu:3', 'size_56': 'gpu:3', 'size_57': 'gpu:3', 'size_58': 'gpu:3', 'size_59': 'gpu:3', 'size_6': 'gpu:3', 'size_60': 'gpu:3', 'size_61': 'gpu:3', 'size_62': 'gpu:3', 'size_63': 'gpu:3', 'size_64': 'gpu:3', 'size_65': 'gpu:3', 'size_66': 'gpu:3', 'size_67': 'gpu:3', 'size_68': 'gpu:3', 'size_69': 'gpu:3', 'size_7': 'gpu:3', 'size_70': 'gpu:3', 'size_71': 'gpu:3', 'size_72': 'gpu:3', 'size_73': 'gpu:3', 'size_74': 'gpu:3', 'size_75': 'gpu:3', 'size_76': 'gpu:3', 'size_77': 'gpu:3', 'size_78': 'gpu:3', 'size_79': 'gpu:3', 'size_8': 'gpu:3', 'size_80': 'gpu:3', 'size_81': 'gpu:3', 'size_82': 'gpu:3', 'size_83': 'gpu:3', 'size_84': 'gpu:3', 'size_85': 'gpu:3', 'size_86': 'gpu:3', 'size_87': 'gpu:3', 'size_88': 'gpu:3', 'size_89': 'gpu:3', 'size_9': 'gpu:3', 'size_90': 'gpu:3', 'size_91': 'gpu:3', 'size_92': 'gpu:3', 'size_93': 'gpu:3', 'size_94': 'gpu:3', 'size_95': 'gpu:3', 'size_96': 'gpu:3', 'size_97': 'gpu:3', 'size_98': 'gpu:3', 'size_99': 'gpu:3', 'softmax': 'gpu:3', 'softmax_1': 'gpu:3', 'softmax_10': 'gpu:3', 'softmax_11': 'gpu:3', 'softmax_2': 'gpu:3', 'softmax_3': 'gpu:3', 'softmax_4': 'gpu:3', 'softmax_5': 'gpu:3', 'softmax_6': 'gpu:3', 'softmax_7': 'gpu:3', 'softmax_8': 'gpu:3', 'softmax_9': 'gpu:3', 'split': 'gpu:3', 'split_1': 'gpu:3', 'split_10': 'gpu:3', 'split_11': 'gpu:3', 'split_2': 'gpu:3', 'split_3': 'gpu:3', 'split_4': 'gpu:3', 'split_5': 'gpu:3', 'split_6': 'gpu:3', 'split_7': 'gpu:3', 'split_8': 'gpu:3', 'split_9': 'gpu:3', 'sub': 'gpu:3', 'sub_1': 'gpu:3', 'sub_10': 'gpu:3', 'sub_11': 'gpu:3', 'sub_2': 'gpu:3', 'sub_3': 'gpu:3', 'sub_4': 'gpu:3', 'sub_5': 'gpu:3', 'sub_6': 'gpu:3', 'sub_7': 'gpu:3', 'sub_8': 'gpu:3', 'sub_9': 'gpu:3', 'tanh': 'gpu:3', 'tanh_1': 'gpu:3', 'tanh_10': 'gpu:3', 'tanh_11': 'gpu:3', 'tanh_2': 'gpu:3', 'tanh_3': 'gpu:3', 'tanh_4': 'gpu:3', 'tanh_5': 'gpu:3', 'tanh_6': 'gpu:3', 'tanh_7': 'gpu:3', 'tanh_8': 'gpu:3', 'tanh_9': 'gpu:3', 'to': 'gpu:3', 'to_1': 'gpu:3', 'to_10': 'gpu:3', 'to_11': 'gpu:3', 'to_12': 'gpu:3', 'to_13': 'gpu:3', 'to_14': 'gpu:3', 'to_15': 'gpu:3', 'to_16': 'gpu:3', 'to_17': 'gpu:3', 'to_18': 'gpu:3', 'to_19': 'gpu:3', 'to_2': 'gpu:3', 'to_20': 'gpu:3', 'to_21': 'gpu:3', 'to_22': 'gpu:3', 'to_23': 'gpu:3', 'to_3': 'gpu:3', 'to_4': 'gpu:3', 'to_5': 'gpu:3', 'to_6': 'gpu:3', 'to_7': 'gpu:3', 'to_8': 'gpu:3', 'to_9': 'gpu:3', 'transpose': 'gpu:3', 'transpose_1': 'gpu:3', 'transpose_10': 'gpu:3', 'transpose_11': 'gpu:3', 'transpose_2': 'gpu:3', 'transpose_3': 'gpu:3', 'transpose_4': 'gpu:3', 'transpose_5': 'gpu:3', 'transpose_6': 'gpu:3', 'transpose_7': 'gpu:3', 'transpose_8': 'gpu:3', 'transpose_9': 'gpu:3', 'truediv': 'gpu:3', 'truediv_1': 'gpu:3', 'truediv_10': 'gpu:3', 'truediv_11': 'gpu:3', 'truediv_2': 'gpu:3', 'truediv_3': 'gpu:3', 'truediv_4': 'gpu:3', 'truediv_5': 'gpu:3', 'truediv_6': 'gpu:3', 'truediv_7': 'gpu:3', 'truediv_8': 'gpu:3', 'truediv_9': 'gpu:3', 'type_1': 'gpu:3', 'type_10': 'gpu:3', 'type_11': 'gpu:3', 'type_12': 'gpu:3', 'type_2': 'gpu:3', 'type_3': 'gpu:3', 'type_4': 'gpu:3', 'type_5': 'gpu:3', 'type_6': 'gpu:3', 'type_7': 'gpu:3', 'type_8': 'gpu:3', 'type_9': 'gpu:3', 'unsqueeze': 'gpu:3', 'view': 'gpu:3', 'view_1': 'gpu:3', 'view_10': 'gpu:3', 'view_100': 'gpu:3', 'view_101': 'gpu:3', 'view_102': 'gpu:3', 'view_103': 'gpu:3', 'view_104': 'gpu:3', 'view_105': 'gpu:3', 'view_106': 'gpu:3', 'view_107': 'gpu:3', 'view_108': 'gpu:3', 'view_109': 'gpu:3', 'view_11': 'gpu:3', 'view_110': 'gpu:3', 'view_111': 'gpu:3', 'view_112': 'gpu:3', 'view_113': 'gpu:3', 'view_114': 'gpu:3', 'view_115': 'gpu:3', 'view_116': 'gpu:3', 'view_117': 'gpu:3', 'view_118': 'gpu:3', 'view_119': 'gpu:3', 'view_12': 'gpu:3', 'view_120': 'gpu:3', 'view_121': 'gpu:3', 'view_122': 'gpu:3', 'view_123': 'gpu:3', 'view_124': 'gpu:3', 'view_125': 'gpu:3', 'view_126': 'gpu:3', 'view_127': 'gpu:3', 'view_128': 'gpu:3', 'view_129': 'gpu:3', 'view_13': 'gpu:3', 'view_130': 'gpu:3', 'view_131': 'gpu:3', 'view_132': 'gpu:3', 'view_133': 'gpu:3', 'view_134': 'gpu:3', 'view_135': 'gpu:3', 'view_136': 'gpu:3', 'view_137': 'gpu:3', 'view_138': 'gpu:3', 'view_139': 'gpu:3', 'view_14': 'gpu:3', 'view_140': 'gpu:3', 'view_141': 'gpu:3', 'view_142': 'gpu:3', 'view_143': 'gpu:3', 'view_144': 'gpu:3', 'view_145': 'gpu:3', 'view_146': 'gpu:3', 'view_15': 'gpu:3', 'view_16': 'gpu:3', 'view_17': 'gpu:3', 'view_18': 'gpu:3', 'view_19': 'gpu:3', 'view_2': 'gpu:3', 'view_20': 'gpu:3', 'view_21': 'gpu:3', 'view_22': 'gpu:3', 'view_23': 'gpu:3', 'view_24': 'gpu:3', 'view_25': 'gpu:3', 'view_26': 'gpu:3', 'view_27': 'gpu:3', 'view_28': 'gpu:3', 'view_29': 'gpu:3', 'view_3': 'gpu:3', 'view_30': 'gpu:3', 'view_31': 'gpu:3', 'view_32': 'gpu:3', 'view_33': 'gpu:3', 'view_34': 'gpu:3', 'view_35': 'gpu:3', 'view_36': 'gpu:3', 'view_37': 'gpu:3', 'view_38': 'gpu:3', 'view_39': 'gpu:3', 'view_4': 'gpu:3', 'view_40': 'gpu:3', 'view_41': 'gpu:3', 'view_42': 'gpu:3', 'view_43': 'gpu:3', 'view_44': 'gpu:3', 'view_45': 'gpu:3', 'view_46': 'gpu:3', 'view_47': 'gpu:3', 'view_48': 'gpu:3', 'view_49': 'gpu:3', 'view_5': 'gpu:3', 'view_50': 'gpu:3', 'view_51': 'gpu:3', 'view_52': 'gpu:3', 'view_53': 'gpu:3', 'view_54': 'gpu:3', 'view_55': 'gpu:3', 'view_56': 'gpu:3', 'view_57': 'gpu:3', 'view_58': 'gpu:3', 'view_59': 'gpu:3', 'view_6': 'gpu:3', 'view_60': 'gpu:3', 'view_61': 'gpu:3', 'view_62': 'gpu:3', 'view_63': 'gpu:3', 'view_64': 'gpu:3', 'view_65': 'gpu:3', 'view_66': 'gpu:3', 'view_67': 'gpu:3', 'view_68': 'gpu:3', 'view_69': 'gpu:3', 'view_7': 'gpu:3', 'view_70': 'gpu:3', 'view_71': 'gpu:3', 'view_72': 'gpu:3', 'view_73': 'gpu:3', 'view_74': 'gpu:3', 'view_75': 'gpu:3', 'view_76': 'gpu:3', 'view_77': 'gpu:3', 'view_78': 'gpu:3', 'view_79': 'gpu:3', 'view_8': 'gpu:3', 'view_80': 'gpu:3', 'view_81': 'gpu:3', 'view_82': 'gpu:3', 'view_83': 'gpu:3', 'view_84': 'gpu:3', 'view_85': 'gpu:3', 'view_86': 'gpu:3', 'view_87': 'gpu:3', 'view_88': 'gpu:3', 'view_89': 'gpu:3', 'view_9': 'gpu:3', 'view_90': 'gpu:3', 'view_91': 'gpu:3', 'view_92': 'gpu:3', 'view_93': 'gpu:3', 'view_94': 'gpu:3', 'view_95': 'gpu:3', 'view_96': 'gpu:3', 'view_97': 'gpu:3', 'view_98': 'gpu:3', 'view_99': 'gpu:3', 'where': 'gpu:3', 'where_1': 'gpu:3', 'where_10': 'gpu:3', 'where_11': 'gpu:3', 'where_2': 'gpu:3', 'where_3': 'gpu:3', 'where_4': 'gpu:3', 'where_5': 'gpu:3', 'where_6': 'gpu:3', 'where_7': 'gpu:3', 'where_8': 'gpu:3', 'where_9': 'gpu:3', 'wpe': 'gpu:3', 'wte': 'gpu:3'}
+
+cost node:
+inputs:[matmul_18, full_18]
+outputs:[getattr_76, getattr_78, getattr_79, getattr_80, to_19]
+device:gpu:3
+name:type_1
+memory_cost:0
+inputs:[softmax, getattr_9]
+outputs:[h_0_attn_attn_dropout]
+device:gpu:3
+name:type_10
+memory_cost:0
+inputs:[softmax_9, getattr_81]
+outputs:[h_9_attn_attn_dropout]
+device:gpu:3
+name:type_11
+memory_cost:0
+inputs:[softmax_10, getattr_89]
+outputs:[h_10_attn_attn_dropout]
+device:gpu:3
+name:type_12
+memory_cost:0
+inputs:[softmax_11, getattr_97]
+outputs:[h_11_attn_attn_dropout]
+device:gpu:3
+name:type_2
+memory_cost:0
+inputs:[softmax_1, getattr_17]
+outputs:[h_1_attn_attn_dropout]
+device:gpu:3
+name:type_3
+memory_cost:0
+inputs:[softmax_2, getattr_25]
+outputs:[h_2_attn_attn_dropout]
+device:gpu:3
+name:type_4
+memory_cost:0
+inputs:[softmax_3, getattr_33]
+outputs:[h_3_attn_attn_dropout]
+device:gpu:3
+name:type_5
+memory_cost:0
+inputs:[softmax_4, getattr_41]
+outputs:[h_4_attn_attn_dropout]
+device:gpu:3
+name:type_6
+memory_cost:0
+inputs:[softmax_5, getattr_49]
+outputs:[h_5_attn_attn_dropout]
+device:gpu:3
+name:type_7
+memory_cost:0
+inputs:[softmax_6, getattr_57]
+outputs:[h_6_attn_attn_dropout]
+device:gpu:3
+name:type_8
+memory_cost:0
+inputs:[softmax_7, getattr_65]
+outputs:[h_7_attn_attn_dropout]
+device:gpu:3
+name:type_9
+memory_cost:0
+inputs:[softmax_8, getattr_73]
+outputs:[h_8_attn_attn_dropout]
+device:gpu:3
+name:unsqueeze
+memory_cost:0
+inputs:[arange]
+outputs:[view_1]
+device:gpu:3
+name:view
+memory_cost:0
+inputs:[input_ids, getitem]
+outputs:[size_1, getattr_1, wte]
+device:gpu:3
+name:view_1
+memory_cost:0
+inputs:[unsqueeze, getitem_3]
+outputs:[wpe]
+device:gpu:3
+name:view_10
+memory_cost:0
+inputs:[h_0_ln_2, size_15]
+outputs:[addmm_2]
+device:gpu:3
+name:view_100
+memory_cost:0
+inputs:[getitem_101, add_100]
+outputs:[permute_32]
+device:gpu:3
+name:view_101
+memory_cost:0
+inputs:[getitem_102, add_101]
+outputs:[permute_33]
+device:gpu:3
+name:view_102
+memory_cost:0
+inputs:[getitem_103, add_102]
+outputs:[permute_34]
+device:gpu:3
+name:view_103
+memory_cost:0
+inputs:[contiguous_8, add_103]
+outputs:[size_132, size_133, view_104]
+device:gpu:3
+name:view_104
+memory_cost:0
+inputs:[view_103, size_133]
+outputs:[addmm_33]
+device:gpu:3
+name:view_105
+memory_cost:0
+inputs:[addmm_33, add_104]
+outputs:[h_8_attn_resid_dropout]
+device:gpu:3
+name:view_106
+memory_cost:0
+inputs:[h_8_ln_2, size_135]
+outputs:[addmm_34]
+device:gpu:3
+name:view_107
+memory_cost:0
+inputs:[addmm_34, add_106]
+outputs:[mul_32, pow_18, add_107]
+device:gpu:3
+name:view_108
+memory_cost:0
+inputs:[mul_35, size_137]
+outputs:[addmm_35]
+device:gpu:3
+name:view_109
+memory_cost:0
+inputs:[addmm_35, add_109]
+outputs:[h_8_mlp_dropout]
+device:gpu:3
+name:view_11
+memory_cost:0
+inputs:[addmm_2, add_10]
+outputs:[mul, pow_2, add_11]
+device:gpu:3
+name:view_110
+memory_cost:0
+inputs:[h_9_ln_1, size_139]
+outputs:[addmm_36]
+device:gpu:3
+name:view_111
+memory_cost:0
+inputs:[addmm_36, add_111]
+outputs:[split_9]
+device:gpu:3
+name:view_112
+memory_cost:0
+inputs:[getitem_113, add_112]
+outputs:[permute_36]
+device:gpu:3
+name:view_113
+memory_cost:0
+inputs:[getitem_114, add_113]
+outputs:[permute_37]
+device:gpu:3
+name:view_114
+memory_cost:0
+inputs:[getitem_115, add_114]
+outputs:[permute_38]
+device:gpu:3
+name:view_115
+memory_cost:0
+inputs:[contiguous_9, add_115]
+outputs:[size_147, size_148, view_116]
+device:gpu:3
+name:view_116
+memory_cost:0
+inputs:[view_115, size_148]
+outputs:[addmm_37]
+device:gpu:3
+name:view_117
+memory_cost:0
+inputs:[addmm_37, add_116]
+outputs:[h_9_attn_resid_dropout]
+device:gpu:3
+name:view_118
+memory_cost:0
+inputs:[h_9_ln_2, size_150]
+outputs:[addmm_38]
+device:gpu:3
+name:view_119
+memory_cost:0
+inputs:[addmm_38, add_118]
+outputs:[mul_36, pow_20, add_119]
+device:gpu:3
+name:view_12
+memory_cost:0
+inputs:[mul_3, size_17]
+outputs:[addmm_3]
+device:gpu:3
+name:view_120
+memory_cost:0
+inputs:[mul_39, size_152]
+outputs:[addmm_39]
+device:gpu:3
+name:view_121
+memory_cost:0
+inputs:[addmm_39, add_121]
+outputs:[h_9_mlp_dropout]
+device:gpu:3
+name:view_122
+memory_cost:0
+inputs:[h_10_ln_1, size_154]
+outputs:[addmm_40]
+device:gpu:3
+name:view_123
+memory_cost:0
+inputs:[addmm_40, add_123]
+outputs:[split_10]
+device:gpu:3
+name:view_124
+memory_cost:0
+inputs:[getitem_125, add_124]
+outputs:[permute_40]
+device:gpu:3
+name:view_125
+memory_cost:0
+inputs:[getitem_126, add_125]
+outputs:[permute_41]
+device:gpu:3
+name:view_126
+memory_cost:0
+inputs:[getitem_127, add_126]
+outputs:[permute_42]
+device:gpu:3
+name:view_127
+memory_cost:0
+inputs:[contiguous_10, add_127]
+outputs:[size_162, size_163, view_128]
+device:gpu:3
+name:view_128
+memory_cost:0
+inputs:[view_127, size_163]
+outputs:[addmm_41]
+device:gpu:3
+name:view_129
+memory_cost:0
+inputs:[addmm_41, add_128]
+outputs:[h_10_attn_resid_dropout]
+device:gpu:3
+name:view_13
+memory_cost:0
+inputs:[addmm_3, add_13]
+outputs:[h_0_mlp_dropout]
+device:gpu:3
+name:view_130
+memory_cost:0
+inputs:[h_10_ln_2, size_165]
+outputs:[addmm_42]
+device:gpu:3
+name:view_131
+memory_cost:0
+inputs:[addmm_42, add_130]
+outputs:[mul_40, pow_22, add_131]
+device:gpu:3
+name:view_132
+memory_cost:0
+inputs:[mul_43, size_167]
+outputs:[addmm_43]
+device:gpu:3
+name:view_133
+memory_cost:0
+inputs:[addmm_43, add_133]
+outputs:[h_10_mlp_dropout]
+device:gpu:3
+name:view_134
+memory_cost:0
+inputs:[h_11_ln_1, size_169]
+outputs:[addmm_44]
+device:gpu:3
+name:view_135
+memory_cost:0
+inputs:[addmm_44, add_135]
+outputs:[split_11]
+device:gpu:3
+name:view_136
+memory_cost:0
+inputs:[getitem_137, add_136]
+outputs:[permute_44]
+device:gpu:3
+name:view_137
+memory_cost:0
+inputs:[getitem_138, add_137]
+outputs:[permute_45]
+device:gpu:3
+name:view_138
+memory_cost:0
+inputs:[getitem_139, add_138]
+outputs:[permute_46]
+device:gpu:3
+name:view_139
+memory_cost:0
+inputs:[contiguous_11, add_139]
+outputs:[size_177, size_178, view_140]
+device:gpu:3
+name:view_14
+memory_cost:0
+inputs:[h_1_ln_1, size_19]
+outputs:[addmm_4]
+device:gpu:3
+name:view_140
+memory_cost:0
+inputs:[view_139, size_178]
+outputs:[addmm_45]
+device:gpu:3
+name:view_141
+memory_cost:0
+inputs:[addmm_45, add_140]
+outputs:[h_11_attn_resid_dropout]
+device:gpu:3
+name:view_142
+memory_cost:0
+inputs:[h_11_ln_2, size_180]
+outputs:[addmm_46]
+device:gpu:3
+name:view_143
+memory_cost:0
+inputs:[addmm_46, add_142]
+outputs:[mul_44, pow_24, add_143]
+device:gpu:3
+name:view_144
+memory_cost:0
+inputs:[mul_47, size_182]
+outputs:[addmm_47]
+device:gpu:3
+name:view_145
+memory_cost:0
+inputs:[addmm_47, add_145]
+outputs:[h_11_mlp_dropout]
+device:gpu:3
+name:view_146
+memory_cost:0
+inputs:[ln_f, add_2]
+outputs:[output]
+device:gpu:3
+name:view_15
+memory_cost:0
+inputs:[addmm_4, add_15]
+outputs:[split_1]
+device:gpu:3
+name:view_16
+memory_cost:0
+inputs:[getitem_17, add_16]
+outputs:[permute_4]
+device:gpu:3
+name:view_17
+memory_cost:0
+inputs:[getitem_18, add_17]
+outputs:[permute_5]
+device:gpu:3
+name:view_18
+memory_cost:0
+inputs:[getitem_19, add_18]
+outputs:[permute_6]
+device:gpu:3
+name:view_19
+memory_cost:0
+inputs:[contiguous_1, add_19]
+outputs:[size_27, size_28, view_20]
+device:gpu:3
+name:view_2
+memory_cost:0
+inputs:[h_0_ln_1, size_4]
+outputs:[addmm]
+device:gpu:3
+name:view_20
+memory_cost:0
+inputs:[view_19, size_28]
+outputs:[addmm_5]
+device:gpu:3
+name:view_21
+memory_cost:0
+inputs:[addmm_5, add_20]
+outputs:[h_1_attn_resid_dropout]
+device:gpu:3
+name:view_22
+memory_cost:0
+inputs:[h_1_ln_2, size_30]
+outputs:[addmm_6]
+device:gpu:3
+name:view_23
+memory_cost:0
+inputs:[addmm_6, add_22]
+outputs:[mul_4, pow_4, add_23]
+device:gpu:3
+name:view_24
+memory_cost:0
+inputs:[mul_7, size_32]
+outputs:[addmm_7]
+device:gpu:3
+name:view_25
+memory_cost:0
+inputs:[addmm_7, add_25]
+outputs:[h_1_mlp_dropout]
+device:gpu:3
+name:view_26
+memory_cost:0
+inputs:[h_2_ln_1, size_34]
+outputs:[addmm_8]
+device:gpu:3
+name:view_27
+memory_cost:0
+inputs:[addmm_8, add_27]
+outputs:[split_2]
+device:gpu:3
+name:view_28
+memory_cost:0
+inputs:[getitem_29, add_28]
+outputs:[permute_8]
+device:gpu:3
+name:view_29
+memory_cost:0
+inputs:[getitem_30, add_29]
+outputs:[permute_9]
+device:gpu:3
+name:view_3
+memory_cost:0
+inputs:[addmm, add_3]
+outputs:[split]
+device:gpu:3
+name:view_30
+memory_cost:0
+inputs:[getitem_31, add_30]
+outputs:[permute_10]
+device:gpu:3
+name:view_31
+memory_cost:0
+inputs:[contiguous_2, add_31]
+outputs:[size_42, size_43, view_32]
+device:gpu:3
+name:view_32
+memory_cost:0
+inputs:[view_31, size_43]
+outputs:[addmm_9]
+device:gpu:3
+name:view_33
+memory_cost:0
+inputs:[addmm_9, add_32]
+outputs:[h_2_attn_resid_dropout]
+device:gpu:3
+name:view_34
+memory_cost:0
+inputs:[h_2_ln_2, size_45]
+outputs:[addmm_10]
+device:gpu:3
+name:view_35
+memory_cost:0
+inputs:[addmm_10, add_34]
+outputs:[mul_8, pow_6, add_35]
+device:gpu:3
+name:view_36
+memory_cost:0
+inputs:[mul_11, size_47]
+outputs:[addmm_11]
+device:gpu:3
+name:view_37
+memory_cost:0
+inputs:[addmm_11, add_37]
+outputs:[h_2_mlp_dropout]
+device:gpu:3
+name:view_38
+memory_cost:0
+inputs:[h_3_ln_1, size_49]
+outputs:[addmm_12]
+device:gpu:3
+name:view_39
+memory_cost:0
+inputs:[addmm_12, add_39]
+outputs:[split_3]
+device:gpu:3
+name:view_4
+memory_cost:0
+inputs:[getitem_5, add_4]
+outputs:[permute]
+device:gpu:3
+name:view_40
+memory_cost:0
+inputs:[getitem_41, add_40]
+outputs:[permute_12]
+device:gpu:3
+name:view_41
+memory_cost:0
+inputs:[getitem_42, add_41]
+outputs:[permute_13]
+device:gpu:3
+name:view_42
+memory_cost:0
+inputs:[getitem_43, add_42]
+outputs:[permute_14]
+device:gpu:3
+name:view_43
+memory_cost:0
+inputs:[contiguous_3, add_43]
+outputs:[size_57, size_58, view_44]
+device:gpu:3
+name:view_44
+memory_cost:0
+inputs:[view_43, size_58]
+outputs:[addmm_13]
+device:gpu:3
+name:view_45
+memory_cost:0
+inputs:[addmm_13, add_44]
+outputs:[h_3_attn_resid_dropout]
+device:gpu:3
+name:view_46
+memory_cost:0
+inputs:[h_3_ln_2, size_60]
+outputs:[addmm_14]
+device:gpu:3
+name:view_47
+memory_cost:0
+inputs:[addmm_14, add_46]
+outputs:[mul_12, pow_8, add_47]
+device:gpu:3
+name:view_48
+memory_cost:0
+inputs:[mul_15, size_62]
+outputs:[addmm_15]
+device:gpu:3
+name:view_49
+memory_cost:0
+inputs:[addmm_15, add_49]
+outputs:[h_3_mlp_dropout]
+device:gpu:3
+name:view_5
+memory_cost:0
+inputs:[getitem_6, add_5]
+outputs:[permute_1]
+device:gpu:3
+name:view_50
+memory_cost:0
+inputs:[h_4_ln_1, size_64]
+outputs:[addmm_16]
+device:gpu:3
+name:view_51
+memory_cost:0
+inputs:[addmm_16, add_51]
+outputs:[split_4]
+device:gpu:3
+name:view_52
+memory_cost:0
+inputs:[getitem_53, add_52]
+outputs:[permute_16]
+device:gpu:3
+name:view_53
+memory_cost:0
+inputs:[getitem_54, add_53]
+outputs:[permute_17]
+device:gpu:3
+name:view_54
+memory_cost:0
+inputs:[getitem_55, add_54]
+outputs:[permute_18]
+device:gpu:3
+name:view_55
+memory_cost:0
+inputs:[contiguous_4, add_55]
+outputs:[size_72, size_73, view_56]
+device:gpu:3
+name:view_56
+memory_cost:0
+inputs:[view_55, size_73]
+outputs:[addmm_17]
+device:gpu:3
+name:view_57
+memory_cost:0
+inputs:[addmm_17, add_56]
+outputs:[h_4_attn_resid_dropout]
+device:gpu:3
+name:view_58
+memory_cost:0
+inputs:[h_4_ln_2, size_75]
+outputs:[addmm_18]
+device:gpu:3
+name:view_59
+memory_cost:0
+inputs:[addmm_18, add_58]
+outputs:[mul_16, pow_10, add_59]
+device:gpu:3
+name:view_6
+memory_cost:0
+inputs:[getitem_7, add_6]
+outputs:[permute_2]
+device:gpu:3
+name:view_60
+memory_cost:0
+inputs:[mul_19, size_77]
+outputs:[addmm_19]
+device:gpu:3
+name:view_61
+memory_cost:0
+inputs:[addmm_19, add_61]
+outputs:[h_4_mlp_dropout]
+device:gpu:3
+name:view_62
+memory_cost:0
+inputs:[h_5_ln_1, size_79]
+outputs:[addmm_20]
+device:gpu:3
+name:view_63
+memory_cost:0
+inputs:[addmm_20, add_63]
+outputs:[split_5]
+device:gpu:3
+name:view_64
+memory_cost:0
+inputs:[getitem_65, add_64]
+outputs:[permute_20]
+device:gpu:3
+name:view_65
+memory_cost:0
+inputs:[getitem_66, add_65]
+outputs:[permute_21]
+device:gpu:3
+name:view_66
+memory_cost:0
+inputs:[getitem_67, add_66]
+outputs:[permute_22]
+device:gpu:3
+name:view_67
+memory_cost:0
+inputs:[contiguous_5, add_67]
+outputs:[size_87, size_88, view_68]
+device:gpu:3
+name:view_68
+memory_cost:0
+inputs:[view_67, size_88]
+outputs:[addmm_21]
+device:gpu:3
+name:view_69
+memory_cost:0
+inputs:[addmm_21, add_68]
+outputs:[h_5_attn_resid_dropout]
+device:gpu:3
+name:view_7
+memory_cost:0
+inputs:[contiguous, add_7]
+outputs:[size_12, size_13, view_8]
+device:gpu:3
+name:view_70
+memory_cost:0
+inputs:[h_5_ln_2, size_90]
+outputs:[addmm_22]
+device:gpu:3
+name:view_71
+memory_cost:0
+inputs:[addmm_22, add_70]
+outputs:[mul_20, pow_12, add_71]
+device:gpu:3
+name:view_72
+memory_cost:0
+inputs:[mul_23, size_92]
+outputs:[addmm_23]
+device:gpu:3
+name:view_73
+memory_cost:0
+inputs:[addmm_23, add_73]
+outputs:[h_5_mlp_dropout]
+device:gpu:3
+name:view_74
+memory_cost:0
+inputs:[h_6_ln_1, size_94]
+outputs:[addmm_24]
+device:gpu:3
+name:view_75
+memory_cost:0
+inputs:[addmm_24, add_75]
+outputs:[split_6]
+device:gpu:3
+name:view_76
+memory_cost:0
+inputs:[getitem_77, add_76]
+outputs:[permute_24]
+device:gpu:3
+name:view_77
+memory_cost:0
+inputs:[getitem_78, add_77]
+outputs:[permute_25]
+device:gpu:3
+name:view_78
+memory_cost:0
+inputs:[getitem_79, add_78]
+outputs:[permute_26]
+device:gpu:3
+name:view_79
+memory_cost:0
+inputs:[contiguous_6, add_79]
+outputs:[size_102, size_103, view_80]
+device:gpu:3
+name:view_8
+memory_cost:0
+inputs:[view_7, size_13]
+outputs:[addmm_1]
+device:gpu:3
+name:view_80
+memory_cost:0
+inputs:[view_79, size_103]
+outputs:[addmm_25]
+device:gpu:3
+name:view_81
+memory_cost:0
+inputs:[addmm_25, add_80]
+outputs:[h_6_attn_resid_dropout]
+device:gpu:3
+name:view_82
+memory_cost:0
+inputs:[h_6_ln_2, size_105]
+outputs:[addmm_26]
+device:gpu:3
+name:view_83
+memory_cost:0
+inputs:[addmm_26, add_82]
+outputs:[mul_24, pow_14, add_83]
+device:gpu:3
+name:view_84
+memory_cost:0
+inputs:[mul_27, size_107]
+outputs:[addmm_27]
+device:gpu:3
+name:view_85
+memory_cost:0
+inputs:[addmm_27, add_85]
+outputs:[h_6_mlp_dropout]
+device:gpu:3
+name:view_86
+memory_cost:0
+inputs:[h_7_ln_1, size_109]
+outputs:[addmm_28]
+device:gpu:3
+name:view_87
+memory_cost:0
+inputs:[addmm_28, add_87]
+outputs:[split_7]
+device:gpu:3
+name:view_88
+memory_cost:0
+inputs:[getitem_89, add_88]
+outputs:[permute_28]
+device:gpu:3
+name:view_89
+memory_cost:0
+inputs:[getitem_90, add_89]
+outputs:[permute_29]
+device:gpu:3
+name:view_9
+memory_cost:0
+inputs:[addmm_1, add_8]
+outputs:[h_0_attn_resid_dropout]
+device:gpu:3
+name:view_90
+memory_cost:0
+inputs:[getitem_91, add_90]
+outputs:[permute_30]
+device:gpu:3
+name:view_91
+memory_cost:0
+inputs:[contiguous_7, add_91]
+outputs:[size_117, size_118, view_92]
+device:gpu:3
+name:view_92
+memory_cost:0
+inputs:[view_91, size_118]
+outputs:[addmm_29]
+device:gpu:3
+name:view_93
+memory_cost:0
+inputs:[addmm_29, add_92]
+outputs:[h_7_attn_resid_dropout]
+device:gpu:3
+name:view_94
+memory_cost:0
+inputs:[h_7_ln_2, size_120]
+outputs:[addmm_30]
+device:gpu:3
+name:view_95
+memory_cost:0
+inputs:[addmm_30, add_94]
+outputs:[mul_28, pow_16, add_95]
+device:gpu:3
+name:view_96
+memory_cost:0
+inputs:[mul_31, size_122]
+outputs:[addmm_31]
+device:gpu:3
+name:view_97
+memory_cost:0
+inputs:[addmm_31, add_97]
+outputs:[h_7_mlp_dropout]
+device:gpu:3
+name:view_98
+memory_cost:0
+inputs:[h_8_ln_1, size_124]
+outputs:[addmm_32]
+device:gpu:3
+name:view_99
+memory_cost:0
+inputs:[addmm_32, add_99]
+outputs:[split_8]
+device:gpu:3
+name:where
+memory_cost:0
+inputs:[getitem_11, to_1, to]
+outputs:[softmax]
+device:gpu:3
+name:where_1
+memory_cost:0
+inputs:[getitem_23, to_3, to_2]
+outputs:[softmax_1]
+device:gpu:3
+name:where_10
+memory_cost:0
+inputs:[getitem_131, to_21, to_20]
+outputs:[softmax_10]
+device:gpu:3
+name:where_11
+memory_cost:0
+inputs:[getitem_143, to_23, to_22]
+outputs:[softmax_11]
+device:gpu:3
+name:where_2
+memory_cost:0
+inputs:[getitem_35, to_5, to_4]
+outputs:[softmax_2]
+device:gpu:3
+name:where_3
+memory_cost:0
+inputs:[getitem_47, to_7, to_6]
+outputs:[softmax_3]
+device:gpu:3
+name:where_4
+memory_cost:0
+inputs:[getitem_59, to_9, to_8]
+outputs:[softmax_4]
+device:gpu:3
+name:where_5
+memory_cost:0
+inputs:[getitem_71, to_11, to_10]
+outputs:[softmax_5]
+device:gpu:3
+name:where_6
+memory_cost:0
+inputs:[getitem_83, to_13, to_12]
+outputs:[softmax_6]
+device:gpu:3
+name:where_7
+memory_cost:0
+inputs:[getitem_95, to_15, to_14]
+outputs:[softmax_7]
+device:gpu:3
+name:where_8
+memory_cost:0
+inputs:[getitem_107, to_17, to_16]
+outputs:[softmax_8]
+device:gpu:3
+name:where_9
+memory_cost:0
+inputs:[getitem_119, to_19, to_18]
+outputs:[softmax_9]
+device:gpu:3
+name:wpe
+memory_cost:0
+inputs:[view_1]
+outputs:[add_1]
+device:gpu:3
+name:wte
+memory_cost:0
+inputs:[view]
+outputs:[add_1]
+device:gpu:3

@@ -1,0 +1,61 @@
+  for (const auto &node : all_nodes) {
+    auto cnode = node->cast<CNodePtr>();
+    cout<<"fullname: "<<cnode->fullname_with_scope()<<endl;
+    cout<<"UniqueName: "<<cnode->UniqueName()<<endl;
+    auto inputs = cnode->inputs();
+    for (auto it = inputs.begin(); it != inputs.end(); it++) {
+      cout << "input: "<< it->get()->ToString() << endl;
+    }
+    if (cnode != nullptr && cnode->has_user_data<OperatorInfo>()) {
+        auto c_op = cnode->user_data<OperatorInfo>();
+        cout << "device: " << c_op->stage_device_list() << endl;
+    }
+
+    // cout<<"output: "<<output->name()<<endl;
+    // ->user_data<OperatorInfo>()
+    //通过node得到oprator得到cost，有map对应名字和op
+    // cout<< "outputs_tensor_map_"<<c_op.outputs_tensor_map_.first<<c_op.outputs_tensor_map_.second<<endl;
+    // auto outputs_tensor_info = c_op->outputs_tensor_info(); //vector<TensorInfo>
+    // for(auto &tensor_info: outputs_tensor_info){
+    //   auto tensor_map = tensor_info.tensor_layout().tensor_map();
+    //   auto device_arrangement = tensor_info.tensor_layout().device_arrangement();
+    //   cout<<"tensor_map: "<<tensor_map.first<<" "<<tensor_map.second<<endl;
+    //   cout<<"device_arrangement: "<<device_arrangement<<endl;
+
+    // }
+  }
+  StrategyMap stra_map;
+  for (auto &op : entire_costgraph->GetOperators()) {
+    StrategyPtr s_strategy = op->selected_strategy();
+    std::string strategy_key_name = op->cnodes()[0]->fullname_with_scope();
+    stra_map[strategy_key_name] = s_strategy;
+  }
+  for (auto &op : entire_costgraph->GetOperators()) {
+    cout<< "cnode.id: "<<op->cnode()->UniqueId()<<endl;
+    cout<<"GetCNodeFuncName: "<<GetCNodeFuncName(op->cnode())<<endl;
+    cout<<"UniqueName: "<<op->cnode()->UniqueName()<<endl;
+    //cnode的attras
+    auto attrs = op->cnode()->attrs();
+    // cout << "op.attrs: "<< op->attrs() << endl;
+    for (auto it = attrs.begin(); it != attrs.end(); it++) {
+      cout<<it->first<<" : "<<it->second<<endl;
+    }
+    auto operator_cost = op->operator_cost();
+    // op->GetForwardMemoryCostFromCNode()
+    auto op_cost = operator_cost ->GetMemoryCost(op->inputs_tensor_info(),op->outputs_tensor_info());
+    cout <<"op_cost: "<<op_cost<<endl;
+    auto inputs = op->cnode()->inputs();
+    for (auto it = inputs.begin(); it != inputs.end(); it++) {
+      cout << "input: "<< it->get()->ToString() << endl;
+    }
+
+    auto output = op->cnode()->forward();
+    cout<<"output: "<<output->second<<endl;
+    for(auto &inputs_tensor_info: op->inputs_tensor_info()){
+      auto tensor_map = inputs_tensor_info->tensor_layout()->tensor_map();
+      auto device_arrangement = inputs_tensor_info->tensor_layout()->device_arrangement();
+      cout<<"tensor_map: "<<tensor_map<<endl;
+      cout<<"device_arrangement: "<<device_arrangement<<endl;
+    }
+  }
+  

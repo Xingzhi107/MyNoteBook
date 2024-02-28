@@ -1030,6 +1030,23 @@ class CostGraph {
 
 调用ParallelStrategySearch或者SearchParallelStrategy的接口是哪个
 
-mind_gee/mindspore-main/mindspore/mindspore/ccsrc/frontend/parallel
+vim mind/mindspore/mindspore/ccsrc/frontend/parallel/step_auto_parallel.cc
+vim mind/mindspore/ccsrc/frontend/parallel/adapter.h
+vim CMakeLists.txt
+vim mindspore/ccsrc/frontend/parallel/CMakeLists.txt
+bash build.sh -e gpu -S on
+pip install output/mindspore-*.whl -i https://pypi.tuna.tsinghua.edu.cn/simple
+
 
 要点1：gcc要在9-9.4.0之间
+
+Traceback (most recent call last):
+  File "mindformers/run_mindformer.py", line 22, in <module>
+    import mindspore as ms
+  File "/usr/local/python-3.7.5/lib/python3.7/site-packages/mindspore/__init__.py", line 18, in <module>
+    from mindspore.run_check import run_check
+  File "/usr/local/python-3.7.5/lib/python3.7/site-packages/mindspore/run_check/__init__.py", line 17, in <module>
+    from ._check_version import check_version_and_env_config
+  File "/usr/local/python-3.7.5/lib/python3.7/site-packages/mindspore/run_check/_check_version.py", line 29, in <module>
+    from mindspore._c_expression import MSContext, ms_ctx_param
+ImportError: /usr/local/python-3.7.5/lib/python3.7/site-packages/mindspore/lib/libmindspore_common.so: undefined symbol: _ZN9mindspore9PrimitiveC1ERKSsRKN10robin_hood6detail5TableILb1ELm80ESsSt10shared_ptrINS_5ValueEENS3_4hashISsvEESt8equal_toISsEEEb

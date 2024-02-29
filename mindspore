@@ -1028,17 +1028,16 @@ class CostGraph {
 
 排布模型由device_matrix，tensor_shape和tensor map组成，分别表示设备矩阵形状、张量形状、设备和张量维度间的映射关系。
 
-调用ParallelStrategySearch或者SearchParallelStrategy的接口是哪个
 
 vim mind/mindspore/mindspore/ccsrc/frontend/parallel/step_auto_parallel.cc
-vim mind/mindspore/ccsrc/frontend/parallel/adapter.h
+vim mind/mindspore/mindspore/ccsrc/frontend/parallel/adapter.h
 vim CMakeLists.txt
 vim mindspore/ccsrc/frontend/parallel/CMakeLists.txt
 bash build.sh -e gpu -S on
 pip install output/mindspore-*.whl -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 
-要点1：gcc要在9-9.4.0之间
+gcc要在9-9.4.0之间
 
 Traceback (most recent call last):
   File "mindformers/run_mindformer.py", line 22, in <module>

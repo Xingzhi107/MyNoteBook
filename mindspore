@@ -1028,6 +1028,9 @@ class CostGraph {
 
 排布模型由device_matrix，tensor_shape和tensor map组成，分别表示设备矩阵形状、张量形状、设备和张量维度间的映射关系。
 
+export PATH=/usr/local/cuda-11.6/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.6/lib64:$LD_LIBRARY_PATH
+export CUDA_HOME=/usr/local/cuda-11.6
 
 vim mind/mindspore/mindspore/ccsrc/frontend/parallel/step_auto_parallel.cc
 vim mind/mindspore/mindspore/ccsrc/frontend/parallel/adapter.h

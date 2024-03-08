@@ -1039,6 +1039,7 @@ vim mindspore/ccsrc/frontend/parallel/CMakeLists.txt
 bash build.sh -e gpu -S on
 pip install output/mindspore-*.whl -i https://pypi.tuna.tsinghua.edu.cn/simple
 
+git submodule add -f http://116.63.219.95:3000/rd-framework/GeeSibling.git geesibling
 
 gcc要在9-9.4.0之间
 

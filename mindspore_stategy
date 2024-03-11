@@ -1,0 +1,31 @@
+_set_auto_parallel_context_func_map:
+    "search_mode": auto_parallel_context().set_strategy_search_mode,
+    "auto_parallel_search_mode": auto_parallel_context().set_auto_parallel_search_mode,
+
+
+D:\Desktop\works\coderead\mindspore\mindspore\tests\ut\python\parallel\test_auto_parallel_pangu_alpha.py:
+stras = _cell_graph_executor._get_shard_strategy(model._train_network)
+
+
+可能得一些函数：
+StepAutoParallel
+
+重排布代价
+
+代价
+
+ *  example2:
+ *    in_device_arrangement = [8, 4],
+ *    in_tensor_map = [0, 1],
+ *    in_tensor_shape = [512, 1024],
+ *    out_device_arrangement = [4, 2, 2, 2]
+ *  =>
+ *    out_tensor_map = [1, 0, 3, 2],
+ *    out_tensor_shape = [2, 256, 4, 256]
+
+ 关键数据结构：
+ tensor_map：
+
+device_arrangement:
+
+tensor_layout:

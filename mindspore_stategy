@@ -38,3 +38,5 @@ int64_t TensorLayout::GetSliceDeviceDimensionByTensorDimensionIndex(uint64_t idx
 }
 在分布式计算中，张量的物理布局（即设备上的实际存储方式）通常与逻辑布局（即程序员定义的张量映射）是相反的。这意味着，如果我们在逻辑上将一个维度映射到设备的第一个维度，那么在物理上，这个维度可能实际上是存储在最后一个维度上的。因此，函数中的减法操作实际上是在进行这种逻辑到物理的转换。
 具体来说，device_arrangement_.GetDimSize()返回设备布局的总维度数，而tensor_map_.GetDimByIdx(idx)返回张量映射中给定索引的维度值。函数通过从设备布局的总维度数减去1（因为索引是从0开始的），然后再减去张量映射的维度值，来得到对应的设备切片维度。
+
+node类型：

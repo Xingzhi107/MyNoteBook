@@ -29,3 +29,16 @@ function proxy_status() {
         echo "HTTPS_PROXY:" "${HTTPS_PROXY}"
         echo "ALL_PROXY:" "${ALL_PROXY}"
 }
+
+
+
+function set_proxy() {
+         # 查询宿主机的IP地址
+          proxy_server=`ip route show | grep -i default | awk '{ print $3}'`
+           # http_proxy (局域网端口号）
+            proxy_port=7890
+             export http_proxy=http://$proxy_server:$proxy_port
+              export HTTP_PROXY=$http_proxy
+               export https_proxy=$http_proxy
+                export HTTPS_PROXY=$http_proxy
+        }
